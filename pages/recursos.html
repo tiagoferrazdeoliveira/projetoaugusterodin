@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Pedagógicos - O Corpo Masculino na Obra de Rodin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <link rel="stylesheet" href="../css/timeline.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .pedagogical-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .activity-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .activity-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .glossary-term {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .glossary-term:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .glossary-term h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .glossary-definition {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--text-gray);
+        }
+        
+        .glossary-term.active .glossary-definition {
+            display: block;
+            animation: fadeInUp 0.3s ease;
+        }
+        
+        .interactive-quiz {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        .quiz-question {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .quiz-options {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .quiz-option {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .quiz-option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--accent-color);
+        }
+        
+        .quiz-option.correct {
+            background: rgba(40, 167, 69, 0.1);
+            border-color: #28a745;
+            color: #28a745;
+        }
+        
+        .quiz-option.incorrect {
+            background: rgba(220, 53, 69, 0.1);
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+        
+        .creative-activity {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 111, 71, 0.1));
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .activity-steps {
+            counter-reset: step-counter;
+        }
+        
+        .activity-step {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .activity-step::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .reflection-prompt {
+            background: rgba(44, 24, 16, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+        }
+        
+        .reflection-prompt h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .reflection-input {
+            width: 100%;
+            min-height: 100px;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: inherit;
+            resize: vertical;
+            margin-top: 1rem;
+        }
+        
+        .reflection-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        .progress-tracker {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .achievement-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.25rem;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-badge.earned {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="../index.html" style="text-decoration: none; color: inherit;">Rodin Digital</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html#inicio" class="nav-link">Início</a></li>
+                    <li><a href="../index.html#contexto" class="nav-link">Contexto</a></li>
+                    <li><a href="../index.html#influencias" class="nav-link">Influências</a></li>
+                    <li><a href="../index.html#galeria" class="nav-link">Galeria</a></li>
+                    <li><a href="../index.html#analise" class="nav-link">Análise</a></li>
+                    <li><a href="recursos.html" class="nav-link active">Recursos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-content" style="grid-template-columns: 1fr;">
+            <div class="hero-text" style="text-align: center;">
+                <h1 class="hero-title">Recursos Pedagógicos</h1>
+                <p class="hero-subtitle">Ferramentas educativas baseadas na pedagogia freireana</p>
+                <p class="hero-description">
+                    Explore atividades interativas, glossário e reflexões que promovem 
+                    o protagonismo do aprendiz na construção do conhecimento sobre arte.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracker -->
+    <section class="section">
+        <div class="container">
+            <div class="progress-tracker">
+                <h3>Seu Progresso de Aprendizagem</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="learning-progress"></div>
+                </div>
+                <p>Complete as atividades para avançar em sua jornada de descoberta artística</p>
+                <div class="achievements">
+                    <span class="achievement-badge" id="badge-explorer">🔍 Explorador</span>
+                    <span class="achievement-badge" id="badge-analyst">🎨 Analista</span>
+                    <span class="achievement-badge" id="badge-critic">💭 Crítico</span>
+                    <span class="achievement-badge" id="badge-creator">✨ Criador</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Glossário Interativo -->
+    <section class="section pedagogical-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Glossário Interativo</h2>
+                <p class="section-subtitle">Termos essenciais para compreender a obra de Rodin</p>
+            </div>
+
+            <div class="glossary-container">
+                <div class="glossary-term" onclick="toggleGlossary(this)">
+                    <h4>Non Finito</h4>
+                    <p>Técnica escultórica que deixa partes da obra intencionalmente inacabadas</p>
+                    <div class="glossary-definition">
+                        <p>O "non finito" é uma técnica desenvolvida por Michelangelo e adotada por Rodin, onde certas partes da escultura permanecem deliberadamente inacabadas. Esta escolha estética intensifica a expressividade da obra, sugerindo movimento, transformação e o próprio processo criativo. Em Rodin, o non finito torna-se linguagem poética, expressando a metamorfose constante da existência.</p>
+                    </div>
+                </div>
+
+                <div class="glossary-term" onclick="toggleGlossary(this)">
+                    <h4>Expressividade Corporal</h4>
+                    <p>Capacidade do corpo de transmitir emoções e estados psicológicos</p>
+                    <div class="glossary-definition">
+                        <p>Para Rodin, o corpo humano não é apenas forma física, mas linguagem capaz de expressar as complexidades da alma. Através da postura, tensão muscular, gestos e até mesmo fragmentação, o escultor consegue transmitir sentimentos profundos como angústia, paixão, melancolia e força espiritual.</p>
+                    </div>
+                </div>
+
+                <div class="glossary-term" onclick="toggleGlossary(this)">
+                    <h4>Realismo Psicológico</h4>
+                    <p>Representação que vai além da aparência física para capturar a essência emocional</p>
+                    <div class="glossary-definition">
+                        <p>Influenciado por Donatello, Rodin desenvolve um realismo que penetra na psicologia dos personagens. Não se trata apenas de reproduzir fielmente a anatomia, mas de revelar o mundo interior através de detalhes sutis: um olhar, uma tensão muscular, a inclinação da cabeça.</p>
+                    </div>
+                </div>
+
+                <div class="glossary-term" onclick="toggleGlossary(this)">
+                    <h4>Fragmentação</h4>
+                    <p>Técnica de apresentar partes do corpo como obras completas</p>
+                    <div class="glossary-definition">
+                        <p>Rodin inova ao apresentar fragmentos corporais - mãos, torsos, pés - como esculturas autônomas. Esta técnica concentra a expressão em elementos específicos, intensificando o impacto emocional e sugerindo que a parte pode conter a totalidade da experiência humana.</p>
+                    </div>
+                </div>
+
+                <div class="glossary-term" onclick="toggleGlossary(this)">
+                    <h4>Pedagogia Freireana</h4>
+                    <p>Abordagem educativa que promove o protagonismo e a autonomia do aprendiz</p>
+                    <div class="glossary-definition">
+                        <p>Baseada no pensamento de Paulo Freire, esta pedagogia valoriza o diálogo, a reflexão crítica e a construção coletiva do conhecimento. No contexto deste livro digital, significa convidar o leitor a questionar, interpretar e relacionar a arte com sua própria experiência, desenvolvendo autonomia intelectual.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atividades Educativas -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Atividades Educativas</h2>
+                <p class="section-subtitle">Propostas para aprofundar sua compreensão artística</p>
+            </div>
+
+            <div class="activity-card">
+                <div class="activity-icon">🎨</div>
+                <h3>Análise Comparativa</h3>
+                <p>Compare as técnicas expressivas de Rodin com seus mestres Michelangelo e Donatello</p>
+                
+                <div class="creative-activity">
+                    <h4>Como fazer:</h4>
+                    <div class="activity-steps">
+                        <div class="activity-step">
+                            Escolha uma escultura de Rodin da galeria principal
+                        </div>
+                        <div class="activity-step">
+                            Identifique elementos que remetem a Michelangelo ou Donatello
+                        </div>
+                        <div class="activity-step">
+                            Observe as inovações que Rodin introduziu
+                        </div>
+                        <div class="activity-step">
+                            Reflita sobre como o contexto histórico influenciou essas mudanças
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reflection-prompt">
+                    <h4>💭 Reflexão Crítica</h4>
+                    <p>Como Rodin consegue dialogar com a tradição ao mesmo tempo em que cria algo novo? O que isso nos ensina sobre inovação artística?</p>
+                    <textarea class="reflection-input" placeholder="Escreva suas reflexões aqui..."></textarea>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div class="activity-icon">🔍</div>
+                <h3>Leitura Corporal</h3>
+                <p>Desenvolva sua capacidade de "ler" as emoções expressas através do corpo nas esculturas</p>
+                
+                <div class="creative-activity">
+                    <h4>Exercício prático:</h4>
+                    <div class="activity-steps">
+                        <div class="activity-step">
+                            Observe atentamente "O Pensador" por 5 minutos
+                        </div>
+                        <div class="activity-step">
+                            Identifique cada tensão muscular e sua possível significação
+                        </div>
+                        <div class="activity-step">
+                            Imagine os pensamentos que poderiam gerar essa postura
+                        </div>
+                        <div class="activity-step">
+                            Compare com sua própria postura quando está concentrado
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reflection-prompt">
+                    <h4>💭 Conexão Pessoal</h4>
+                    <p>Que semelhanças você encontra entre as expressões corporais de Rodin e suas próprias experiências emocionais?</p>
+                    <textarea class="reflection-input" placeholder="Compartilhe suas descobertas..."></textarea>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div class="activity-icon">✍️</div>
+                <h3>Criação Narrativa</h3>
+                <p>Crie histórias inspiradas nas esculturas, desenvolvendo sua imaginação e interpretação</p>
+                
+                <div class="creative-activity">
+                    <h4>Desafio criativo:</h4>
+                    <div class="activity-steps">
+                        <div class="activity-step">
+                            Escolha uma escultura que mais te impacta
+                        </div>
+                        <div class="activity-step">
+                            Imagine a história por trás daquele momento capturado
+                        </div>
+                        <div class="activity-step">
+                            Escreva um texto de 200 palavras narrando essa história
+                        </div>
+                        <div class="activity-step">
+                            Relacione sua narrativa com temas universais da condição humana
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reflection-prompt">
+                    <h4>💭 Criação Literária</h4>
+                    <p>Escreva sua narrativa inspirada na escultura escolhida:</p>
+                    <textarea class="reflection-input" placeholder="Era uma vez..." style="min-height: 150px;"></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Interativo -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quiz Interativo</h2>
+                <p class="section-subtitle">Teste seus conhecimentos sobre Rodin e sua obra</p>
+            </div>
+
+            <div class="interactive-quiz">
+                <div class="quiz-question">
+                    1. Qual técnica de Michelangelo influenciou profundamente o trabalho de Rodin?
+                </div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectQuizOption(this, false)">
+                        A perspectiva linear renascentista
+                    </div>
+                    <div class="quiz-option" onclick="selectQuizOption(this, true)">
+                        O non finito (inacabado intencional)
+                    </div>
+                    <div class="quiz-option" onclick="selectQuizOption(this, false)">
+                        A pintura a fresco
+                    </div>
+                    <div class="quiz-option" onclick="selectQuizOption(this, false)">
+                        A arquitetura clássica
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-quiz">
+                <div class="quiz-question">
+                    2. O que caracteriza o realismo psicológico de Donatello que influenciou Rodin?
+                </div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectQuizOption(this, false)">
+                        A perfeição anatômica absoluta
+                    </div>
+                    <div class="quiz-option" onclick="selectQuizOption(this, true)">
+                        A expressão de emoções através de detalhes sutis
+                    </div>
+                    <div class="quiz-option" onclick="selectQuizOption(this, false)">
+                        O uso exclusivo de mármore branco
+                    </div>
+                    <div class="quiz-option" onclick="selectQuizOption(this, false)">
+                        A representação apenas de temas religiosos
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-quiz">
+                <div class="quiz-question">
+                    3. Por que "Os Burgueses de Calais" foi considerado inovador?
+                </div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectQuizOption(this, false)">
+                        Por ser feito em bronze dourado
+                    </div>
+                    <div class="quiz-option" onclick="selectQuizOption(this, true)">
+                        Por eliminar o pedestal tradicional e colocar as figuras no nível do observador
+                    </div>
+                    <div class="quiz-option" onclick="selectQuizOption(this, false)">
+                        Por representar apenas personagens fictícios
+                    </div>
+                    <div class="quiz-option" onclick="selectQuizOption(this, false)">
+                        Por ser a primeira escultura em grupo da história
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Recursos Pedagógicos</h3>
+                    <p>
+                        Estas atividades foram desenvolvidas seguindo os princípios da pedagogia 
+                        freireana, promovendo o diálogo, a reflexão crítica e a construção 
+                        autônoma do conhecimento artístico.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Próximos Passos</h3>
+                    <ul>
+                        <li>Visite um museu com obras de Rodin</li>
+                        <li>Pesquise outros escultores modernos</li>
+                        <li>Crie suas próprias interpretações artísticas</li>
+                        <li>Compartilhe suas descobertas</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contato Educativo</h3>
+                    <p>
+                        Para educadores interessados em adaptar estes recursos 
+                        para suas práticas pedagógicas, entre em contato através 
+                        da instituição de ensino.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 - Livro Digital: O Corpo Masculino na Obra de Rodin - Recursos Pedagógicos</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidades específicas da página de recursos
+        let completedActivities = 0;
+        const totalActivities = 6;
+
+        function toggleGlossary(element) {
+            element.classList.toggle('active');
+            updateProgress();
+        }
+
+        function selectQuizOption(element, isCorrect) {
+            const options = element.parentNode.querySelectorAll('.quiz-option');
+            options.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                if (opt === element) {
+                    opt.classList.add(isCorrect ? 'correct' : 'incorrect');
+                } else if (isCorrect === false) {
+                    // Mostrar resposta correta
+                    const correctOption = Array.from(options).find(opt => 
+                        opt.onclick.toString().includes('true')
+                    );
+                    if (correctOption) correctOption.classList.add('correct');
+                }
+            });
+            
+            if (isCorrect) {
+                updateProgress();
+            }
+        }
+
+        function updateProgress() {
+            completedActivities++;
+            const progress = (completedActivities / totalActivities) * 100;
+            document.getElementById('learning-progress').style.width = progress + '%';
+            
+            // Unlock badges
+            if (completedActivities >= 1) {
+                document.getElementById('badge-explorer').classList.add('earned');
+            }
+            if (completedActivities >= 3) {
+                document.getElementById('badge-analyst').classList.add('earned');
+            }
+            if (completedActivities >= 5) {
+                document.getElementById('badge-critic').classList.add('earned');
+            }
+            if (completedActivities >= 6) {
+                document.getElementById('badge-creator').classList.add('earned');
+            }
+        }
+
+        // Monitor reflection inputs
+        document.querySelectorAll('.reflection-input').forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.value.length > 50 && !this.dataset.counted) {
+                    this.dataset.counted = 'true';
+                    updateProgress();
+                }
+            });
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth animations
+            const cards = document.querySelectorAll('.activity-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
+
