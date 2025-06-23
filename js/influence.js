@@ -1,30 +1,21 @@
 // js/influence.js
 
-// Dados detalhados para cada card de influência
 const influenceData = {
-    'revolucao': {
-        title: 'Revolução na Escultura',
-        details: `Antes de Rodin, a escultura acadêmica focava em representações idealizadas, mitológicas e alegóricas, com superfícies polidas e poses estáticas. Rodin rompeu com isso de forma dramática. Ele reintroduziu o realismo, não apenas na forma, mas na emoção. Suas figuras são seres humanos de carne e osso, capturados em momentos de paixão, angústia e pensamento profundo. Ele usava a textura da superfície (o "non finito") para capturar a luz e dar vida ao bronze e ao mármore, fazendo com que a forma parecesse emergir da matéria bruta.`
+    'Michelangelo': {
+        title: 'Michelangelo Buonarroti',
+        details: `A valorização do movimento e da expressividade do corpo, é uma característica que foi marcante em Michelangelo, tornou-se evidente também na obra de Rodin. A dramaticidade dos gestos, a tensão muscular e a angústia visível nas figuras revelam uma ruptura com a idealização clássica, aproximando-se de uma sensibilidade quase que real. Rodin utilizou a técnica do non finito de Michelangelo... No entanto, Rodin transformou o inacabado em linguagem estética, expressando a metamorfose constante da existência.`
     },
-    'fragmento': {
-        title: 'Técnica do Fragmento',
-        details: `Uma das contribuições mais radicais de Rodin foi a ideia de que um fragmento do corpo — um torso, uma mão, uma cabeça — poderia ser uma obra de arte completa e autônoma. Para a academia, isso era impensável. Para Rodin, um fragmento bem executado continha a essência e a emoção do todo. O "Homem que Caminha", sem cabeça e sem braços, é o exemplo máximo disso: a escultura é puro movimento e determinação. Essa abordagem abriu caminho para a abstração na escultura do século XX.`
+    'Donatello': {
+        title: 'Donatello',
+        details: `Donatello representou para Rodin outro tipo de referência. Uma referência mais voltada ao realismo psicológico e à sutileza narrativa... Foi um dos primeiros a inserir uma profundidade expressiva no interior dos corpos esculpidos, humanizando os personagens bíblicos e os santos com pequenos gestos, expressões sutis e posturas que sugerem um sentimento emocional profundo.`
     },
-    'expressionismo': {
-        title: 'Expressionismo Escultórico',
-        details: `Rodin é frequentemente chamado de o pai da escultura moderna e um precursor do Expressionismo. Em vez de se ater estritamente à anatomia realista, ele a exagerava e distorcia para intensificar a expressão emocional. Músculos se tensionam de forma impossível, posturas se contorcem sob o peso da emoção. Em obras como "Os Burgueses de Calais", cada figura é um estudo psicológico profundo. Ele não esculpia corpos, ele esculpia sentimentos.`
+    'impressionismo': {
+        title: 'Tradição clássica, realismo e impressionismo',
+        details: `Rodin absorveu influências do realismo e impressionismo, movimentos que estavam em ebulição na Paris do século XIX. Isso influenciou Rodin a criar esculturas que rompiam com a rigidez acadêmica e buscavam captar emoções, instantes e a verdade interior dos personagens.`
     },
-    'arte-publica': {
-        title: 'Arte Pública Moderna',
-        details: `Com monumentos como "Os Burgueses de Calais" e o "Monumento a Balzac", Rodin subverteu a ideia do herói no pedestal. Em "Calais", ele coloca os heróis no nível do espectador, tornando seu sacrifício palpável e humano, não divino. Com "Balzac", ele se recusou a criar um retrato literal, optando por uma forma quase abstrata que representava o poder criativo do escritor. Ambas as obras causaram escândalo, mas redefiniram o que um monumento público poderia ser: não apenas uma comemoração, mas uma poderosa declaração artística e emocional.`
-    },
-    'artistas': {
-        title: 'Influência Direta em Artistas',
-        details: `O ateliê de Rodin foi um centro de inovação onde trabalharam ou que frequentaram artistas que se tornariam gigantes da arte moderna. Camille Claudel, sua colaboradora e amante, foi profundamente influenciada por ele (e o influenciou). Constantin Brâncuși trabalhou brevemente para Rodin antes de sair, dizendo a famosa frase: "Nada cresce à sombra de grandes árvores". Mesmo em sua rebelião, Brâncuși partiu dos princípios de Rodin para levar a escultura à abstração pura. Artistas como Henri Matisse (em suas esculturas), Alberto Giacometti e Henry Moore devem um débito incalculável a Rodin.`
-    },
-    'legado': {
-        title: 'Legado Contemporâneo',
-        details: `A influência de Rodin perdura até hoje. Sua ênfase na materialidade, no processo e na expressão emocional ressoa no trabalho de inúmeros artistas contemporâneos. A ideia de usar o corpo como veículo para a expressão de estados psicológicos é um tema central na arte performática e em muitas instalações. O modo como ele montava e remontava fragmentos para criar novas obras (a técnica da "assemblage") é um precursor direto de muitas práticas artísticas do século XX e XXI. Rodin ensinou ao mundo que a escultura poderia ser tão pessoal, complexa e psicologicamente profunda quanto a poesia ou a música.`
+    'Outras-referencias': {
+        title: 'Outras referências',
+        details: `Você também cita o impacto da cena artística da época, com nomes como Adolphe Bouguereau, Gustave Courbet, Jules Dalou, Jean-Baptiste Carpeaux, Gustave Moreau e Paul Gauguin, além do simbolismo e impressionismo, que influenciaram o ambiente em que Rodin cresceu como artista.`
     }
 };
 
@@ -42,10 +33,15 @@ class InfluenceSystem {
 
     init() {
         this.bindEvents();
+        // Fechar modal ao clicar no botão de fechar
+        this.modal.querySelector('.close').addEventListener('click', () => this.hideModal());
+        // Fechar modal ao clicar fora do conteúdo
+        this.modal.addEventListener('click', (e) => {
+            if (e.target === this.modal) this.hideModal();
+        });
     }
 
     bindEvents() {
-        // Event listener no container para pegar cliques nos cards (event delegation)
         this.influenceGrid.addEventListener('click', (e) => {
             const card = e.target.closest('.influencia-item');
             if (card && card.dataset.influence) {
@@ -57,16 +53,13 @@ class InfluenceSystem {
     showModal(influenceId) {
         const data = influenceData[influenceId];
         if (!data) return;
-
         this.modalTitle.textContent = data.title;
-        this.modalContent.innerHTML = `<p>${data.details.replace(/\n/g, '</p><p>')}</p>`;
-
+        this.modalContent.textContent = data.details;
         this.modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
 
-    closeModal() {
-        // This is handled by main.js now
+    hideModal() {
         this.modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
