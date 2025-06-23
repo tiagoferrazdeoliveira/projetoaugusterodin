@@ -1,0 +1,121 @@
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+
+/* Tablets e Telas Menores (até 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    /* INÍCIO DA LÓGICA RESPONSIVA DA LINHA DO TEMPO */
+    .timeline-grid-desktop {
+        display: none; /* Esconde o layout de desktop em telas menores */
+    }
+
+    .timeline-grid-mobile {
+        display: block; /* Mostra o layout de mobile */
+        width: 100%;
+        max-width: 500px; /* Limita a largura para melhor leitura */
+        margin: 0 auto;
+    }
+
+    .timeline-item-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        padding-bottom: var(--spacing-lg);
+        cursor: pointer;
+    }
+    
+    /* Desenha a linha vertical que conecta os eventos */
+    .timeline-item-mobile:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 20px; /* Posição inicial (centro do círculo) */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 100%; /* Ocupa todo o espaço até o próximo item */
+        background-color: var(--border-color-light);
+        z-index: 0;
+    }
+    
+    /* Estiliza o círculo com o número do evento para o layout mobile */
+    .timeline-grid-mobile .timeline-number-circle {
+        position: relative;
+        z-index: 1; /* Garante que o círculo fique sobre a linha */
+        background-color: var(--primary-light); /* Cor de fundo da seção */
+    }
+
+    .timeline-content-mobile {
+        margin-top: var(--spacing-sm);
+    }
+    
+    .timeline-content-mobile .timeline-title {
+        font-size: 1.2rem;
+    }
+
+    /* Estilo para a pílula de ano no mobile */
+    .timeline-content-mobile .timeline-year-pill {
+        margin-top: var(--spacing-sm);
+        display: inline-block; /* Garante que a pílula seja visível */
+        font-size: 0.8rem;
+        padding: 2px 10px;
+    }
+}
+
+/* Smartphones (até 768px) */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.8rem;
+    }
+    
+    .section {
+        padding-top: calc(var(--spacing-lg) + 120px);
+        padding-bottom: var(--spacing-lg);
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-body {
+        padding: var(--spacing-md);
+    }
+    
+    .modal-tabs {
+        flex-wrap: wrap;
+    }
+}
