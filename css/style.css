@@ -434,7 +434,18 @@ body {
 /* ================================================
    AJUSTES ESPECÍFICOS PARA A SEÇÃO INFLUÊNCIA DESKTOP
    ================================================ */
-
+#inicio {
+    background-image: url('images/rodin-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 @media (min-width: 1025px) {
     #influencia.section {
         padding-top: 0px !important;  /* ajuste conforme o seu gosto: 48~72px */
