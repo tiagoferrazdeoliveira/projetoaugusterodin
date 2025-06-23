@@ -121,28 +121,44 @@ const sculpturesData = {
     },
     'ugolino-filhos': {
         title: 'Ugolino e seus Filhos',
-        year: '1870',
-        images: ['https://upload.wikimedia.org/wikipedia/commons/c/cd/Ugolin_et_ses_enfants_Mus%C3%A9e_Rodin_S.1427_Paris.jpg','https://upload.wikimedia.org/wikipedia/commons/d/d4/Auguste_rodin%2C_ugolino%2C_1906%2C_02.JPG','https://upload.wikimedia.org/wikipedia/commons/6/68/Auguste_rodin%2C_ugolino%2C_1906%2C_01.JPG'],
-        historia: 'Baseada no Inferno de Dante, esta obra retrata o Conde Ugolino condenado a morrer de fome com seus filhos. Rodin capturou o momento de desespero absoluto, onde Ugolino contempla o canibalismo para sobreviver.',
-        comunica: 'A obra comunica o desespero humano em sua forma mais extrema, o conflito entre amor paternal e instinto de sobrevivência. A tensão emocional é devastadora.',
-        reflexao: 'Como Rodin consegue comunicar tanto sofrimento através da postura corporal? Que dilemas morais esta obra apresenta?',
+        year: '1882',
+        images: ['images/sculptures/ugolino-filhos.jpg','https://upload.wikimedia.org/wikipedia/commons/d/d4/Auguste_rodin%2C_ugolino%2C_1906%2C_02.JPG','https://upload.wikimedia.org/wikipedia/commons/6/68/Auguste_rodin%2C_ugolino%2C_1906%2C_01.JPG'],
+        especificacoes: {
+            "Título Original": "Ugolin et ses enfants",
+            "Artista": "Auguste Rodin (1840–1917)",
+            "Data": "Modelado em 1882, fundido em 1906",
+            "Material": "Bronze",
+            "Dimensões": "97.2 x 152.4 x 101.6 cm",
+            "Fonte": "The Metropolitan Museum of Art"
+        },
+        historia: `Baseado no Canto XXXIII do "Inferno" de Dante, esta obra retrata o Conde Ugolino della Gherardesca, aprisionado com seus filhos e netos para morrer de fome. Rodin captura o momento de desespero absoluto, onde Ugolino, rastejando sobre seus descendentes mortos, contempla o canibalismo para sobreviver. A obra foi originalmente projetada para o "Portão do Inferno", mas sua composição horizontal e complexa levou Rodin a exibi-la como uma peça independente.<br><br><em>Fontes: The Metropolitan Museum of Art, Musée Rodin.</em>`,
+        comunica: `Rilke veria esta obra como a exploração da "superfície" do corpo levada ao extremo do sofrimento. Ele descreveria como a dor e a fome se tornam a própria forma da escultura. Os corpos se contorcem não por ação, mas pela agonia. O corpo de Ugolino, em vez de um recipiente de alma, torna-se uma prisão de desespero, onde a humanidade é testada em seu limite mais terrível, e a forma física reflete a degradação moral e espiritual.<br><br><em>Fonte: Interpretação baseada nos escritos de Rainer Maria Rilke sobre Rodin.</em>`,
+        reflexao: 'A escultura retrata um momento de dilema moral extremo. Como a composição física do grupo — o amontoado de corpos — intensifica a sensação de aprisionamento e desespero psicológico?',
         quiz: [
             { question: 'De qual obra literária esta escultura é inspirada?', options: ['A Ilíada de Homero', 'O Inferno de Dante', 'Édipo Rei de Sófocles'], correct: 1, explanation: 'A escultura é baseada no Canto XXXIII do Inferno, da Divina Comédia de Dante.' },
-            { question: 'Quem foi Ugolino della Gherardesca?', options: ['Um poeta italiano', 'Um conde condenado por traição', 'Um escultor contemporâneo de Rodin'], correct: 1, explanation: 'Ugolino della Gherardesca foi um conde italiano condenado a morrer de fome junto com seus filhos e netos.' },
-            { question: 'Que conflito emocional a obra retrata?', options: ['Amor versus ódio', 'Fé versus razão', 'Amor paternal versus instinto de sobrevivência'], correct: 2, explanation: 'A obra retrata o conflito devastador entre o amor paternal e o instinto de sobrevivência.' }
+            { question: 'Que dilema moral extremo Ugolino enfrenta na cena retratada por Rodin?', options: ['Lutar ou render-se', 'A escolha entre a fé e a razão', 'A tentação do canibalismo para sobreviver'], correct: 2, explanation: 'Rodin captura o momento em que Ugolino, cego pela fome, contempla o ato supremo de desespero para sobreviver.' },
+            { question: 'Por que esta obra, embora projetada para o "Portão do Inferno", foi tratada como uma peça separada?', options: ['Era grande demais para caber no portão', 'Sua composição horizontal e autossuficiente funcionava melhor como uma escultura independente', 'O tema era considerado muito chocante para o portão'], correct: 1, explanation: 'Sua forte presença narrativa e composição complexa fizeram dela uma obra poderosa por si só, sendo frequentemente exibida separadamente.' }
         ]
     },
     'eva': {
         title: 'Eva',
-        year: '1897',
-        images: ['https://i.postimg.cc/rTvYgqbw/eva.jpg','https://upload.wikimedia.org/wikipedia/commons/f/f8/Staedel-Frankfurt-Eva-von-Auguste-Rodin-Ffm-041.jpg','https://upload.wikimedia.org/wikipedia/commons/1/18/Staedel-Frankfurt-Eva-von-Auguste-Rodin-Ffm-042.jpg'],
-        historia: 'Criada em 1897, "Eva" representa a primeira mulher, mas interpretada pela visão moderna de Rodin. A figura expressa vergonha e consciência após a queda do paraíso, capturando o peso emocional da culpa.',
-        comunica: 'A obra comunica vulnerabilidade, consciência e o peso do conhecimento. A postura curvada e protetiva expressa a vergonha, mas também a dignidade da figura feminina.',
-        reflexao: 'Como a postura corporal comunica estados emocionais? Como Rodin consegue expressar tanto vulnerabilidade quanto dignidade na mesma figura?',
+        year: '1881',
+        images: ['images/sculptures/eva.jpg','https://upload.wikimedia.org/wikipedia/commons/f/f8/Staedel-Frankfurt-Eva-von-Auguste-Rodin-Ffm-041.jpg','https://upload.wikimedia.org/wikipedia/commons/1/18/Staedel-Frankfurt-Eva-von-Auguste-Rodin-Ffm-042.jpg'],
+        especificacoes: {
+            "Título Original": "Ève",
+            "Artista": "Auguste Rodin (1840–1917)",
+            "Data": "Modelado em 1881",
+            "Material": "Bronze (fundições póstumas)",
+            "Dimensões": "Aprox. 173 cm de altura",
+            "Fonte": "Musée Rodin"
+        },
+        historia: `Concebida para flanquear o "Portão do Inferno" junto com "Adão", "Eva" representa a primeira mulher após a Queda. Rodin a retrata em um momento de profunda vergonha e angústia, com o corpo contraído e os braços cruzados para se proteger. A produção da obra foi interrompida quando Rodin descobriu que sua modelo estava grávida, o que o levou a deixar a escultura "inacabada", um estado que ele passou a valorizar esteticamente.<br><br><em>Fonte: Musée Rodin, The Metropolitan Museum of Art.</em>`,
+        comunica: `Para Rilke, a "Eva" de Rodin seria a encarnação do recolhimento. Ele diria que, ao contrário do Adão que se expande sob o peso do mundo, Eva se contrai para dentro de si mesma. Seu gesto não é de defesa contra o exterior, mas um mergulho em sua própria profundeza recém-descoberta. "Ela se recolhe em si mesma, longe de todos os céus, nas profundezas de seu próprio futuro. Ela se torna fria e se dobra, como uma fruta congelada pela geada."<br><br><em>Fonte: Interpretação baseada nos escritos de Rainer Maria Rilke sobre Rodin.</em>`,
+        reflexao: 'O gesto de Eva é de vergonha ou de proteção? Ou seria um mergulho interior? Como um único gesto pode conter tantas interpretações sobre a condição feminina?',
         quiz: [
-            { question: 'Que momento bíblico esta escultura representa?', options: ['A criação de Eva', 'Eva no jardim do Éden', 'Eva após a queda do paraíso'], correct: 2, explanation: 'A escultura representa Eva após a queda do paraíso, expressando vergonha e consciência da nudez.' },
-            { question: 'Que emoções principais a postura de Eva expressa?', options: ['Alegria e celebração', 'Raiva e revolta', 'Vergonha e vulnerabilidade'], correct: 2, explanation: 'A postura curvada e protetiva de Eva expressa principalmente vergonha, vulnerabilidade e o peso da consciência.' },
-            { question: 'Como Rodin equilibra elementos contrastantes nesta obra?', options: ['Combinando diferentes materiais', 'Equilibrando fragilidade e dignidade', 'Misturando estilos artísticos'], correct: 1, explanation: 'Rodin consegue equilibrar fragilidade e força, vulnerabilidade e dignidade, criando uma representação complexa da feminilidade.' }
+            { question: 'Qual evento levou Rodin a deixar a escultura de Eva "inacabada"?', options: ['Falta de material', 'A gravidez de sua modelo', 'Uma encomenda cancelada'], correct: 1, explanation: 'A mudança no corpo da modelo devido à gravidez interrompeu o processo, e Rodin abraçou o estado inacabado da peça como parte de sua expressão.' },
+            { question: 'Na interpretação de Rilke, o que o gesto de contração de Eva simboliza?', options: ['Medo do mundo exterior', 'Um mergulho em seu próprio interior e futuro', 'Apenas o frio'], correct: 1, explanation: 'Rilke via o gesto não como defesa, mas como um recolhimento para dentro de si, para o início de sua própria jornada interior.' },
+            { question: 'Junto com qual outra escultura "Eva" foi originalmente concebida para o "Portão do Inferno"?', options: ['O Pensador', 'Adão', 'O Beijo'], correct: 1, explanation: 'Adão e Eva foram projetados como as figuras que flanqueariam o Portão, representando a origem do pecado e do sofrimento humano.' }
         ]
     },
     'beijo': {
