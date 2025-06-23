@@ -1,21 +1,31 @@
 // js/influence.js
 
 const influenceData = {
-    'Michelangelo': {
-        title: 'Michelangelo Buonarroti',
-        details: `A valorização do movimento e da expressividade do corpo, é uma característica que foi marcante em Michelangelo, tornou-se evidente também na obra de Rodin. A dramaticidade dos gestos, a tensão muscular e a angústia visível nas figuras revelam uma ruptura com a idealização clássica, aproximando-se de uma sensibilidade quase que real. Rodin utilizou a técnica do non finito de Michelangelo... No entanto, Rodin transformou o inacabado em linguagem estética, expressando a metamorfose constante da existência.`
+    'michelangelo': {
+        title: 'Influência de Michelangelo: Força e o "Non Finito"',
+        details: `A viagem de Rodin à Itália em 1875 foi transformadora, principalmente por seu encontro com as obras de Michelangelo. Ele absorveu a "terribilità" – a força avassaladora e a tensão emocional – presentes em esculturas como o "Davi" e os "Escravos". Rodin herdou de Michelangelo a compreensão do corpo masculino como um veículo para expressar lutas titânicas e uma profunda vida interior.<br><br>
+        Além disso, Rodin reinterpretou a técnica do "non finito" (inacabado). Enquanto em Michelangelo isso poderia ser uma consequência do processo, em Rodin tornou-se uma escolha estética deliberada. Ele usava o contraste entre a superfície polida da pele e a aspereza da pedra bruta para sugerir que a figura estava emergindo da matéria, viva e em processo de transformação.<br><br>
+        <strong>O Olhar de Rilke:</strong> Rilke não precisava citar Michelangelo para ver sua herança. Ao descrever as obras de Rodin, ele fala de uma força que "se acumula e transborda", de corpos que parecem "maiores que eles mesmos". Essa é a linguagem da influência de Michelangelo, traduzida por Rilke em uma nova poética.<br><br>
+        <em>Fontes: Musée Rodin, The Metropolitan Museum of Art, R.M. Rilke - "Auguste Rodin".</em>`
     },
-    'Donatello': {
-        title: 'Donatello',
-        details: `Donatello representou para Rodin outro tipo de referência. Uma referência mais voltada ao realismo psicológico e à sutileza narrativa... Foi um dos primeiros a inserir uma profundidade expressiva no interior dos corpos esculpidos, humanizando os personagens bíblicos e os santos com pequenos gestos, expressões sutis e posturas que sugerem um sentimento emocional profundo.`
+    'donatello': {
+        title: 'Influência de Donatello: Realismo Psicológico',
+        details: `Se Michelangelo ofereceu a Rodin a lição da força monumental, Donatello lhe ensinou a sutileza do realismo psicológico. Rodin admirava como Donatello, séculos antes, conseguia infundir em suas esculturas uma profundidade emocional e uma individualidade que as tornavam intensamente humanas.<br><br>
+        Em obras como o "São João Batista" de Donatello, Rodin viu a capacidade de expressar um mundo interior complexo através de gestos contidos e expressões realistas, sem a necessidade de um drama exagerado. Essa busca por uma "verdade interior", que vai além da simples aparência física, tornou-se uma marca registrada de muitos dos retratos e figuras de Rodin.<br><br>
+        <em>Fontes: Google Arts & Culture, Musée Rodin.</em>`
     },
     'impressionismo': {
-        title: 'Tradição clássica, realismo e impressionismo',
-        details: `Rodin absorveu influências do realismo e impressionismo, movimentos que estavam em ebulição na Paris do século XIX. Isso influenciou Rodin a criar esculturas que rompiam com a rigidez acadêmica e buscavam captar emoções, instantes e a verdade interior dos personagens.`
+        title: 'Diálogo com o Impressionismo: A Superfície e a Luz',
+        details: `Embora seja principalmente um escultor, Rodin é frequentemente considerado um "impressionista" na escultura. Ele compartilhava com os pintores impressionistas um fascínio pela forma como a luz interage com as superfícies. Em vez de criar formas lisas e idealizadas, Rodin modelava suas esculturas com inúmeras pequenas facetas, depressões e saliências.<br><br>
+        Essa técnica fazia com que a superfície do bronze ou do mármore capturasse a luz de maneira vibrante e mutável, criando um efeito de "sfumato" e uma sensação de que a figura estava viva e respirando. A luz não apenas ilumina a obra; ela se torna parte dela, mudando a percepção da forma dependendo do ângulo e da hora do dia.<br><br>
+        <strong>O Olhar de Rilke:</strong> Rilke capturou perfeitamente essa qualidade ao escrever sobre as "superfícies" de Rodin: "A superfície era o tema... Ela consistia em inúmeros encontros da luz com a coisa... um reflexo que vinha de dentro do objeto, como se de uma fonte inesgotável."<br><br>
+        <em>Fontes: Musée Rodin, R.M. Rilke - "Auguste Rodin" (via Textlog.de).</em>`
     },
-    'Outras-referencias': {
-        title: 'Outras referências',
-        details: `Você também cita o impacto da cena artística da época, com nomes como Adolphe Bouguereau, Gustave Courbet, Jules Dalou, Jean-Baptiste Carpeaux, Gustave Moreau e Paul Gauguin, além do simbolismo e impressionismo, que influenciaram o ambiente em que Rodin cresceu como artista.`
+    'outras-referencias': {
+        title: 'O Contexto Artístico de Paris',
+        details: `Rodin não criou no vácuo. Ele foi produto e catalisador da efervescente cena artística de Paris do final do século XIX. Ele absorveu as lições do **Realismo** de Courbet, que valorizava a representação da vida cotidiana e das classes trabalhadoras. Também foi influenciado pela dramaticidade e pelo movimento encontrados em escultores contemporâneos como Jean-Baptiste Carpeaux.<br><br>
+        Ao mesmo tempo, Rodin dialogava com o **Simbolismo**, um movimento que buscava expressar ideias e emoções em vez de aparências. Sua capacidade de transformar o corpo em um símbolo de estados da alma, como em "O Pensador", o alinha a essa corrente. Rodin foi, portanto, uma ponte, um artista que sintetizou a tradição clássica, a observação realista e as novas buscas simbólicas e impressionistas para forjar um caminho inteiramente novo para a escultura.<br><br>
+        <em>Fonte: Análise baseada em informações do Musée Rodin e Google Arts & Culture.</em>`
     }
 };
 
@@ -33,15 +43,14 @@ class InfluenceSystem {
 
     init() {
         this.bindEvents();
-        // Fechar modal ao clicar no botão de fechar
         this.modal.querySelector('.close').addEventListener('click', () => this.hideModal());
-        // Fechar modal ao clicar fora do conteúdo
         this.modal.addEventListener('click', (e) => {
             if (e.target === this.modal) this.hideModal();
         });
     }
 
     bindEvents() {
+        if (!this.influenceGrid) return;
         this.influenceGrid.addEventListener('click', (e) => {
             const card = e.target.closest('.influencia-item');
             if (card && card.dataset.influence) {
@@ -53,8 +62,8 @@ class InfluenceSystem {
     showModal(influenceId) {
         const data = influenceData[influenceId];
         if (!data) return;
-        this.modalTitle.textContent = data.title;
-        this.modalContent.textContent = data.details;
+        this.modalTitle.innerHTML = data.title;
+        this.modalContent.innerHTML = data.details; // Usar innerHTML para renderizar as tags <br> e <strong>
         this.modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
@@ -66,6 +75,5 @@ class InfluenceSystem {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializa o sistema
     window.influenceSystem = new InfluenceSystem();
 });
