@@ -26,6 +26,19 @@ const influenceData = {
         details: `Rodin não criou no vácuo. Ele foi produto e catalisador da efervescente cena artística de Paris do final do século XIX. Ele absorveu as lições do **Realismo** de Courbet, que valorizava a representação da vida cotidiana e das classes trabalhadoras. Também foi influenciado pela dramaticidade e pelo movimento encontrados em escultores contemporâneos como Jean-Baptiste Carpeaux.<br><br>
         Ao mesmo tempo, Rodin dialogava com o **Simbolismo**, um movimento que buscava expressar ideias e emoções em vez de aparências. Sua capacidade de transformar o corpo em um símbolo de estados da alma, como em "O Pensador", o alinha a essa corrente. Rodin foi, portanto, uma ponte, um artista que sintetizou a tradição clássica, a observação realista e as novas buscas simbólicas e impressionistas para forjar um caminho inteiramente novo para a escultura.<br><br>
         <em>Fonte: Análise baseada em informações do Musée Rodin e Google Arts & Culture.</em>`
+    },
+        'escultura-gotica': {
+        title: 'Influência da Escultura Gótica: A Verdade da Forma',
+        details: `Rodin via as catedrais góticas francesas não como monumentos históricos, mas como organismos vivos. Ele admirava profundamente a liberdade e a expressividade dos escultores anônimos da Idade Média. Para ele, a arte gótica continha uma verdade estrutural e uma lógica natural que a arte acadêmica havia perdido.<br><br>
+        Ele estudou a forma como as figuras góticas se integravam à arquitetura e como cada detalhe servia a um propósito expressivo. Essa influência é vista na maneira como Rodin compõe seus próprios grupos, como "Os Burgueses de Calais", onde as figuras formam uma arquitetura de emoção. Ele aprendeu com o gótico a valorizar a "lógica da construção" interna de uma escultura.<br><br>
+        <strong>O Olhar de Rilke:</strong> Rilke escreveu extensivamente sobre a visão de Rodin das catedrais, descrevendo-as como "corpos" e "florestas". Para ele, a admiração de Rodin pelo gótico era a busca por uma arte que nascia da necessidade e da natureza, não de regras. A catedral era um "todo" harmonioso, um princípio que Rodin aplicaria em suas próprias obras.<br><br>
+        <em>Fontes: Musée Rodin, R.M. Rilke - "Auguste Rodin" (via Textlog.de).</em>`
+    },
+    'literatura': {
+        title: 'Influência da Literatura: Dante e Baudelaire',
+        details: `A literatura foi um motor central para a imaginação de Rodin. A "Divina Comédia" de Dante Alighieri foi a fonte primária para sua obra-prima, "O Portão do Inferno", fornecendo um universo de paixão, pecado e sofrimento.<br><br>
+        Além de Dante, Rodin foi profundamente impactado pela poesia de Charles Baudelaire, especialmente por "As Flores do Mal". Baudelaire ensinou a Rodin a encontrar beleza no "feio", no decadente e no melancólico, temas que se afastavam radicalmente do ideal de beleza clássico. Essa conexão com a literatura moderna permitiu que Rodin criasse esculturas que não apenas narravam histórias, mas que encarnavam estados psicológicos e poéticos complexos.<br><br>
+        <em>Fontes: Musée Rodin, Google Arts & Culture.</em>`
     }
 };
 
