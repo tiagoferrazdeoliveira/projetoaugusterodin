@@ -5,92 +5,118 @@ const sculpturesData = {
     'idade-bronze': {
         title: 'A Idade do Bronze',
         year: '1876',
-        images: [ 'https://i.postimg.cc/gGnJYyKs/The-Age-of-Bronze-1.jpg', 'https://i.postimg.cc/c01CzGgV/The-Age-of-Bronze-2.jpg' ],
-        historia: 'Criada em 1876, "A Idade do Bronze" foi a primeira obra-prima de Rodin a ganhar reconhecimento público. A escultura representa um jovem soldado belga, Auguste Neyt, que serviu como modelo. O realismo extremo da obra causou escândalo na época, com críticos acusando Rodin de ter moldado diretamente do corpo humano. Esta controvérsia, embora dolorosa para o artista, trouxe-lhe notoriedade e estabeleceu sua reputação como um revolucionário da escultura.',
-        comunica: 'Esta obra comunica o despertar da consciência humana e a transição da juventude para a maturidade. O corpo nu, em posição de movimento ascendente, simboliza a evolução da humanidade. A expressão facial serena contrasta com a tensão muscular, criando uma dualidade entre contemplação e ação.',
-        reflexao: 'Observe como Rodin conseguiu capturar um momento de transição. O que você sente ao contemplar esta figura? Como a postura do corpo comunica movimento mesmo estando estática?',
+        images: [ 'images/sculptures/idade-bronze.jpg', 'https://i.postimg.cc/13Gj8C3f/idade-bronze-2.jpg', 'https://i.postimg.cc/0jKTY3jN/idade-bronze-3.jpg' ],
+        especificacoes: {
+            "Título Original": "L'Âge d'airain", "Artista": "Auguste Rodin (1840–1917)", "Data": "Modelado em 1876, fundido c. 1906", "Material": "Bronze", "Dimensões": "182.9 x 59.1 x 61.6 cm", "Fonte": "The Metropolitan Museum of Art"
+        },
+        historia: `Apresentada ao Salão de Paris em 1877, esta obra foi a primeira figura de bronze em tamanho real de Rodin. O realismo da escultura era tão intenso que o júri acusou Rodin de "surmoulage" — de ter feito o molde diretamente de um modelo vivo. Para se defender, Rodin apresentou fotografias de seu modelo, o soldado belga Auguste Neyt, para provar que a obra era resultado de sua maestria escultórica, não de um truque mecânico. A controvérsia, embora dolorosa, validou seu talento e lançou sua carreira.<br><br><em>Fontes: Musée Rodin, The Metropolitan Museum of Art.</em>`,
+        comunica: `Rilke descreve esta figura como um despertar lento e profundo: "Algo parecia despertar neste corpo [...] não era um despertar para o pensamento ou para a suspeita, era um despertar para a ação. O olhar estava voltado para dentro, a mão direita se erguia sobre a cabeça e se perdia em algum lugar no vazio... Este gesto permaneceu sem objetivo, vago, como o de alguém que acorda e ainda se encontra submerso por sonhos." Para Rilke, a obra captura o exato momento em que a vida emerge, cheia de hesitação e potencial.<br><br><em>Fonte: Rainer Maria Rilke, "Auguste Rodin" (via Textlog.de).</em>`,
+        reflexao: 'A obra foi acusada de ser "real demais". Em um mundo de filtros e idealizações, o que significa ser "real demais" hoje? Onde a autenticidade se torna uma ofensa?',
         quiz: [
-            { question: 'Por que "A Idade do Bronze" causou escândalo quando foi apresentada?', options: ['Porque retratava nudez masculina', 'Porque o realismo era tão perfeito que acusaram Rodin de moldar diretamente do corpo', 'Porque usava materiais não convencionais'], correct: 1, explanation: 'O realismo extremo da escultura era tão perfeito que os críticos acusaram Rodin de ter feito moldes diretamente do corpo do modelo.' },
-            { question: 'Quem foi o modelo para esta escultura?', options: ['Um artista francês', 'O próprio Rodin', 'Auguste Neyt, um soldado belga'], correct: 2, explanation: 'Auguste Neyt, um jovem soldado belga, serviu como modelo para esta obra revolucionária.' },
-            { question: 'O que a postura da figura simboliza?', options: ['A dor e o sofrimento', 'O despertar da consciência e evolução humana', 'A guerra e conflito'], correct: 1, explanation: 'A postura ascendente e a expressão serena simbolizam o despertar da consciência humana e a evolução da humanidade.' }
+            { question: 'Segundo Rilke, o gesto da mão direita da figura é descrito como...', options: ['Um ato de desafio e força', 'Vago e sem objetivo, como o de alguém que acorda de um sonho', 'Uma imitação de estátuas romanas'], correct: 1, explanation: 'Rilke foca na natureza hesitante e sonhadora do gesto, que não busca uma ação externa, mas reflete um despertar interno.' },
+            { question: 'Qual foi a principal controvérsia que lançou a carreira de Rodin com esta obra?', options: ['O uso de bronze em vez de mármore', 'A acusação de que ele moldou a escultura diretamente de um corpo vivo', 'O tema da nudez masculina'], correct: 1, explanation: 'A acusação de "surmoulage" foi o escândalo que, paradoxalmente, validou seu incrível talento e o tornou famoso.' },
+            { question: 'O que a interpretação de Rilke sugere sobre a "ação" da estátua?', options: ['É uma ação física iminente, como lutar ou correr', 'É uma ação que já aconteceu no passado', 'É um despertar interior, um movimento da alma, e não uma ação externa'], correct: 2, explanation: 'Rilke enfatiza que o movimento é interno, uma transição de estado, e não uma preparação para uma tarefa física no mundo exterior.' }
         ]
     },
     'portao-inferno': {
         title: 'Portão do Inferno',
         year: '1880 - 1917',
-        images: ['https://i.postimg.cc/R9zGxkhG/Gate-of-hell.jpg'],
-        historia: 'Encomendado em 1880, o "Portão do Inferno" foi inspirado na "Divina Comédia" de Dante. Rodin trabalhou nesta obra monumental por 37 anos, até sua morte, e ela se tornou um "viveiro" para muitas de suas obras mais famosas, como "O Pensador" e "O Beijo".',
-        comunica: 'Comunica a complexidade da condição humana através das paixões, sofrimentos e êxtases. Cada figura representa diferentes aspectos da experiência humana, criando uma sinfonia visual de emoções.',
-        reflexao: 'Contemple a densidade emocional desta obra. Que emoções você identifica nas diferentes figuras? Como esta obra reflete a complexidade dos sentimentos humanos?',
+        images: ['images/sculptures/portao-inferno.jpg'],
+        especificacoes: {
+            "Título Original": "La Porte de l'Enfer", "Artista": "Auguste Rodin (1840–1917)", "Data": "Concebido em 1880, nunca completamente finalizado", "Material": "Bronze (fundições póstumas)", "Dimensões": "Aprox. 6m x 4m x 1m", "Inspiração": "A Divina Comédia, de Dante Alighieri"
+        },
+        historia: `Em 1880, Rodin recebeu uma encomenda do Estado francês para projetar um portal monumental para um novo museu de artes decorativas. Inspirado pela "Divina Comédia" de Dante, Rodin dedicou quase quatro décadas a este projeto colossal, que se tornou o trabalho de sua vida. Embora o museu nunca tenha sido construído e o portal nunca tenha sido fundido em bronze durante sua vida, ele se tornou um "viveiro" para muitas de suas figuras mais famosas, incluindo O Pensador, O Beijo e as Três Sombras.<br><br><em>Fonte: Musée Rodin.</em>`,
+        comunica: `Rilke não descreveu o portão como um todo, mas falou sobre as figuras que o compõem, vendo-as como expressões de vida e movimento contínuo. Ele via o trabalho de Rodin como um universo onde cada fragmento continha a totalidade. O Portão, neste sentido, é um cosmos de corpos em movimento, um rio de formas onde a vida humana é retratada em sua totalidade, com todas as suas paixões, dores e tormentos. É a expressão máxima da superfície em constante agitação.<br><br><em>Fonte: Rainer Maria Rilke, "Auguste Rodin" (via Textlog.de).</em>`,
+        reflexao: 'O Portão nunca foi "terminado". O que a ideia de uma obra de arte permanentemente "em processo" nos diz sobre a criatividade e a própria vida?',
         quiz: [
-            { question: 'Qual obra literária inspirou o "Portão do Inferno"?', options: ['O Paraíso Perdido de Milton', 'A Divina Comédia de Dante', 'Fausto de Goethe'], correct: 1, explanation: 'O "Portão do Inferno" foi diretamente inspirado na "Divina Comédia" de Dante Alighieri.' },
-            { question: 'Quantos anos Rodin trabalhou nesta obra?', options: ['20 anos', '30 anos', '37 anos'], correct: 2, explanation: 'Rodin trabalhou no "Portão do Inferno" por 37 anos, desde a encomenda em 1880 até sua morte em 1917.' },
-            { question: 'Quantas figuras aproximadamente compõem o portal?', options: ['Mais de 100', 'Mais de 150', 'Mais de 180'], correct: 2, explanation: 'O "Portão do Inferno" contém mais de 180 figuras.' }
+            { question: 'O Portão do Inferno serviu a que propósito principal para a carreira de Rodin?', options: ['Foi sua obra mais vendida', 'Serviu como um "laboratório" de onde surgiram muitas de suas esculturas independentes', 'Foi uma crítica direta ao governo francês'], correct: 1, explanation: 'Muitas obras icônicas, como O Pensador, foram originalmente concebidas como parte do Portão.' },
+            { question: 'O que a visão de Rilke sobre as figuras do Portão sugere?', options: ['Que elas são meramente decorativas', 'Que cada figura é um universo em si mesma, expressando a totalidade da vida', 'Que elas deveriam ter sido finalizadas'], correct: 1, explanation: 'Para Rilke, a genialidade de Rodin estava em fazer cada fragmento, cada corpo, conter a essência de uma vida inteira, e o Portão é a soma desses universos.' },
+            { question: 'Qual o paradoxo central da história do Portão do Inferno?', options: ['Foi inspirado em uma obra italiana, mas é um ícone francês', 'É sua obra mais famosa, mas nunca foi finalizada ou fundida em bronze durante sua vida', 'É uma obra sobre o inferno, mas contém figuras de amantes'], correct: 1, explanation: 'Apesar de ser a obra central de sua carreira, Rodin nunca a viu em sua forma final de bronze; as fundições são todas póstumas.' }
         ]
     },
     'burgueses-calais': {
         title: 'Os Burgueses de Calais',
-        year: '1884',
-        images: [ 'https://i.postimg.cc/xY47H0P5/Burgueses-de-Calais.jpg', 'https://i.postimg.cc/jsMvbXgc/Burgueses-de-Calais-1.jpg', 'https://i.postimg.cc/Q8VmxTv3/Burgueses-de-Calais-2.jpg', 'https://i.postimg.cc/VfTRSNcb/Burgueses-de-Calais-3.jpg', 'https://i.postimg.cc/4sc89py4/Burgueses-de-Calais-4.jpg', 'https://i.postimg.cc/7qyKMbJ3/Burgueses-de-Calais-5.jpg', 'https://i.postimg.cc/pPYq0xKg/Burgueses-de-Calais-6.jpg', 'https://i.postimg.cc/KZGQwVN4/Burgueses-de-Calais-7.jpg', 'https://i.postimg.cc/HHRZn6pP/Burgueses-de-Calais-8.jpg' ],
-        historia: 'Este monumento revolucionou a arte pública. Rodin rejeitou as convenções, colocando as figuras no mesmo nível do observador, sem pedestal elevado, para comemorar o sacrifício de seis cidadãos de Calais durante o cerco inglês de 1347.',
-        comunica: 'A obra comunica coragem, sacrifício e a dignidade humana diante da adversidade. Cada burguês expressa uma emoção diferente, mostrando que não existe uma única forma de enfrentar o sacrifício.',
-        reflexao: 'Observe como cada figura reage de forma única ao mesmo destino. Que tipo de coragem cada uma demonstra? Como você reagiria em uma situação de sacrifício pelo bem comum?',
+        year: '1884-1895',
+        images: [ 'images/sculptures/burgueses-calais.jpg' /* ... outras imagens ... */ ],
+        especificacoes: {
+            "Título Original": "Les Bourgeois de Calais", "Artista": "Auguste Rodin (1840–1917)", "Data": "Modelado em 1884-1895", "Material": "Bronze", "Dimensões": "209.6 × 238.8 × 190.5 cm", "Evento Histórico": "Cerco de Calais por Eduardo III em 1347"
+        },
+        historia: `Em 1885, a cidade de Calais encomendou a Rodin um monumento para comemorar um episódio da Guerra dos Cem Anos. Seis cidadãos proeminentes (burgueses) se ofereceram como reféns ao rei Eduardo III da Inglaterra para salvar sua cidade da destruição. Rodin subverteu radicalmente as convenções dos monumentos públicos: em vez de uma figura heróica em um pedestal, ele criou um grupo de seis homens angustiados, vestidos com trapos, no mesmo nível do espectador, forçando uma confrontação emocional e humana com o sacrifício.<br><br><em>Fonte: Musée Rodin.</em>`,
+        comunica: `Rilke viu nesta obra a representação da grande caminhada e do sacrifício. Ele escreveu: "Ele os fez a todos do mesmo tamanho... e os entregou ao movimento de suas mãos... Seis homens que se levantaram para ir, e dos quais nenhum consegue realmente ir. Estão um ao lado do outro, como se o vasto pasto da liberdade futura se estendesse diante deles." Ele enfatiza como cada figura é uma solidão, mas juntas formam um organismo de sofrimento e heroísmo.<br><br><em>Fonte: Rainer Maria Rilke, "Auguste Rodin", Sobre os Burgueses de Calais (via Textlog.de).</em>`,
+        reflexao: 'Rodin retratou heróis como homens comuns, cheios de medo e resignação. O que isso nos diz sobre a natureza do heroísmo? Ele está na ausência de medo ou no ato de seguir em frente apesar dele?',
         quiz: [
-            { question: 'Que evento histórico este monumento comemora?', options: ['A Revolução Francesa', 'O cerco de Calais pelos ingleses em 1347', 'A Guerra Franco-Prussiana'], correct: 1, explanation: 'O monumento comemora o sacrifício de seis cidadãos de Calais.' },
-            { question: 'Como Rodin revolucionou a arte monumental com esta obra?', options: ['Usando novos materiais', 'Colocando as figuras no mesmo nível do observador', 'Criando figuras abstratas'], correct: 1, explanation: 'Rodin revolucionou a arte monumental ao colocar as figuras no mesmo nível do observador.' },
-            { question: 'Quantos burgueses compõem o monumento?', options: ['Quatro', 'Cinco', 'Seis'], correct: 2, explanation: 'O monumento representa seis burgueses de Calais.' }
+            { question: 'Qual foi a principal inovação de Rodin neste monumento público?', options: ['O uso de bronze polido', 'Apresentar os heróis de forma vulnerável e ao nível do espectador', 'Colocar apenas uma figura em destaque'], correct: 1, explanation: 'Ao remover o pedestal e retratar a angústia em vez da glória, Rodin mudou a forma como o público interage com monumentos.' },
+            { question: 'De acordo com a visão de Rilke, qual a principal tensão na obra?', options: ['A beleza das roupas contra a feiura dos rostos', 'O desejo de ir (sacrifício) e a incapacidade de se mover (medo)', 'A luta entre os próprios burgueses'], correct: 1, explanation: 'Rilke foca na dualidade do movimento: eles devem caminhar para a morte, mas seus corpos e expressões mostram a hesitação e o peso da decisão.' },
+            { question: 'O que a composição da obra, com seis figuras distintas, permite a Rodin explorar?', options: ['Seis classes sociais diferentes', 'As diferentes reações humanas individuais diante de um destino coletivo', 'Apenas a figura de Eustache de Saint Pierre'], correct: 1, explanation: 'Cada figura é um estudo psicológico único da resignação, medo, determinação e desespero, mostrando que o heroísmo tem muitas faces.' }
         ]
     },
     'adao': {
         title: 'Adão ou A Criação do Homem',
         year: '1880-1881',
-        images: [ 'https://i.postimg.cc/2rRsJ9Nf/Ad-o-ou-A-Cria-o-do-Homem-1.jpg', 'https://i.postimg.cc/MW6wMM3r/Ad-o-ou-A-Cria-o-do-Homem-2.jpg', 'https://i.postimg.cc/4sQS0J1z/Ad-o-ou-A-Cria-o-do-Homem-3.jpg' ],
-        historia: 'Criada entre 1880-1881, esta escultura representa Adão no momento de sua criação, despertando para a vida. Rodin capturou o momento de transição entre a matéria inerte e a consciência viva.',
-        comunica: 'A obra comunica o despertar da consciência humana. A postura sugere tanto o peso da existência quanto a maravilha da descoberta. Rodin capturou o momento exato em que a humanidade nasce, não apenas fisicamente, mas espiritualmente.',
-        reflexao: 'Como Rodin consegue comunicar o momento de transição da inconsciência para a consciência? Que aspectos do "nascer" para a vida esta obra revela?',
+        images: [ 'images/sculptures/adao.jpg', 'https://i.postimg.cc/XWP2cKmS/Ad-o-ou-A-Cria-o-do-Homem-1.jpg', 'https://i.postimg.cc/Hkmx7Nht/Ad-o-ou-A-Cria-o-do-Homem-2.jpg' ],
+        especificacoes: {
+            "Título Original": "Adam", "Artista": "Auguste Rodin (1840–1917)", "Data": "Modelado em 1880-81", "Material": "Bronze", "Dimensões": "199.4 x 77.5 x 77.8 cm", "Fonte": "The Metropolitan Museum of Art"
+        },
+        historia: `Originalmente, Rodin concebeu "Adão" para flanquear seu monumental "Portão do Inferno". A pose da figura é fortemente influenciada por Michelangelo, especialmente pelo Adão do teto da Capela Sistina. No entanto, Rodin transforma a figura: em vez de receber a vida, seu Adão parece sobrecarregado por ela. O corpo se contorce sob um peso invisível, como se carregasse o fardo de toda a humanidade futura.<br><br><em>Fontes: The Metropolitan Museum of Art, Musée Rodin.</em>`,
+        comunica: `Rilke não tem um texto específico sobre o Adão, mas sua análise sobre a obra de Rodin se aplica perfeitamente aqui. Ele falaria sobre como o corpo se torna uma paisagem de sentimentos. O Adão de Rodin não é apenas um corpo, mas a corporificação do esforço, da dor da existência e do despertar para a consciência. Cada músculo tensionado não é apenas anatomia, mas a expressão de uma luta interior, o peso de ser o primeiro homem.<br><br><em>Fonte: Interpretação baseada nos escritos de Rainer Maria Rilke sobre Rodin.</em>`,
+        reflexao: 'Michelangelo mostra Adão recebendo a vida. Rodin mostra Adão sendo sobrecarregado por ela. Que visão sobre a condição humana cada artista está apresentando?',
         quiz: [
-            { question: 'Que momento esta escultura representa?', options: ['Adão no jardim do Éden', 'Adão após a queda', 'O despertar de Adão para a vida'], correct: 2, explanation: 'A escultura representa o momento do despertar de Adão para a vida.' },
-            { question: 'Esta obra originalmente fazia parte de qual projeto maior?', options: ['Os Burgueses de Calais', 'O Portão do Inferno', 'O Monumento a Balzac'], correct: 1, explanation: 'Adão foi originalmente concebido como parte do projeto do "Portão do Inferno".' },
-            { question: 'O que a postura de Adão principalmente comunica?', options: ['Dor e sofrimento', 'Alegria e celebração', 'O peso da existência e maravilha da descoberta'], correct: 2, explanation: 'A postura comunica tanto o peso da existência quanto a maravilha da descoberta.' }
+            { question: 'Qual foi a principal fonte de inspiração de Rodin para a pose de "Adão"?', options: ['A estatuária grega', 'O Adão da Capela Sistina, de Michelangelo', 'As esculturas egípcias'], correct: 1, explanation: 'A conexão com o Adão de Michelangelo é direta e reconhecida, embora Rodin tenha alterado radicalmente seu significado.' },
+            { question: 'Qual a principal diferença de sentimento entre o Adão de Rodin e o de Michelangelo?', options: ['O de Rodin é mais atlético', 'O de Rodin transmite um sentimento de peso e angústia, em vez de um despertar gracioso', 'O de Rodin é menos realista'], correct: 1, explanation: 'Enquanto o Adão de Michelangelo está prestes a receber a vida, o de Rodin parece já sentir todo o peso e a dor da existência humana.' },
+            { question: 'Onde "Adão" foi originalmente concebido para ser posicionado?', options: ['No centro de Paris', 'Como uma obra independente em um jardim', 'Flanqueando "O Portão do Inferno"'], correct: 2, explanation: 'Adão e Eva foram projetados para ficar em cada lado do Portão, servindo como pilares temáticos da obra.' }
         ]
     },
     'pensador': {
         title: 'O Pensador',
         year: '1880',
         images: ['https://i.postimg.cc/S4Dxzttd/The-Thinker-1.jpg', 'https://i.postimg.cc/zztDZVR6/The-Thinker-2.jpg'],
-        historia: 'Criado em 1880 como parte do "Portão do Inferno", "O Pensador" originalmente representava Dante contemplando os círculos do inferno. Tornou-se o símbolo universal da contemplação intelectual.',
-        comunica: 'A obra comunica a profundidade do pensamento humano, a concentração intelectual e o peso da contemplação. A postura curvada sugere tanto o esforço mental quanto a solidão do pensador.',
-        reflexao: 'Como a postura física pode expressar atividade mental? Que tipo de pensamentos esta figura parece contemplar?',
+        especificacoes: {
+            "Título Original": "Le Penseur", "Artista": "Auguste Rodin (1840–1917)", "Data": "Modelado em 1880, fundido em 1902", "Material": "Bronze", "Dimensões": "Aprox. 186 cm de altura (versão monumental)", "Origem": "Originalmente posicionado no topo de 'O Portão do Inferno'"
+        },
+        historia: `Originalmente chamado de "O Poeta", esta figura foi criada para ocupar o centro do tímpano do "Portão do Inferno", representando Dante (ou o próprio Rodin) observando os círculos do inferno abaixo. A figura transcendeu sua origem, tornando-se uma obra independente e um ícone universal da filosofia e do esforço intelectual. Sua popularidade foi tão grande que foi ampliada para uma escala monumental em 1904.<br><br><em>Fontes: Musée Rodin, Google Arts & Culture.</em>`,
+        comunica: `Rilke interpreta "O Pensador" não como a imagem de um intelectual sereno, mas como a personificação da força bruta do próprio pensamento. Ele escreve: "Ele senta-se em silêncio, ponderando, sobrecarregado com seus pensamentos. Todo o seu corpo se tornou uma cabeça, e todo o sangue em suas veias se tornou cérebro... Ele pensa com todo o seu corpo. A força de um Hércules é necessária para um pensamento tão grande."<br><br><em>Fonte: Rainer Maria Rilke, "Auguste Rodin" (via Textlog.de).</em>`,
+        reflexao: 'A imagem popular de "pensar" é de quietude. Rodin o retrata como um esforço físico intenso. Como essa visão desafia nossa ideia sobre o que é o ato de pensar?',
         quiz: [
-            { question: 'Originalmente, quem "O Pensador" representava?', options: ['Rodin mesmo', 'Um filósofo grego', 'Dante'], correct: 2, explanation: 'Originalmente, "O Pensador" representava Dante Alighieri.' },
-            { question: 'De qual obra maior esta escultura fazia parte?', options: ['O Portão do Inferno', 'O Beijo', 'Adão'], correct: 0, explanation: '"O Pensador" foi originalmente criado como parte do "Portão do Inferno".' },
-            { question: 'O que "O Pensador" simboliza universalmente?', options: ['A dor humana', 'A contemplação intelectual', 'A força física'], correct: 1, explanation: '"O Pensador" tornou-se o símbolo universal da contemplação intelectual e filosófica.' }
+            { question: 'De acordo com a interpretação de Rilke, o que o corpo de "O Pensador" expressa?', options: ['Relaxamento e meditação', 'O esforço físico e a energia total consumida pelo ato de pensar', 'A dor de uma lesão'], correct: 1, explanation: 'Rilke via a tensão muscular não como um detalhe, mas como a manifestação física da intensidade do pensamento, que exige a força de todo o corpo.' },
+            { question: 'Qual era a função original de "O Pensador"?', options: ['Ser um monumento em uma praça', 'Ser a figura central no topo do "Portão do Inferno"', 'Ser um estudo anatômico para estudantes'], correct: 1, explanation: 'Ele foi concebido como "O Poeta" (Dante), observando as cenas do inferno que ele mesmo descreveu, a partir do topo do Portão.' },
+            { question: 'O que a transformação de "O Pensador" em uma obra monumental e independente significa?', options: ['Que Rodin desistiu do Portão do Inferno', 'Que a figura possuía uma força simbólica universal que transcendia seu contexto original', 'Que a obra não era popular em sua escala menor'], correct: 1, explanation: 'Seu poder de representar o esforço intelectual e a criatividade humana a tornou um ícone universal, para além de sua origem narrativa.' }
         ]
     },
     'balzac': {
         title: 'Monumento de Balzac',
-        year: '1897',
+        year: '1898',
         images: ['https://i.postimg.cc/YpCJc8f2/Balzac-1.jpg', 'https://i.postimg.cc/wqZKQJNq/Balzac-3.jpg','https://i.postimg.cc/tbMHb0MK/Balzac-2.jpg'],
-        historia: 'Completado em 1897, este monumento ao escritor Honoré de Balzac foi inicialmente rejeitado por sua forma radical. Rodin buscou capturar não a aparência física, mas sua essência criativa.',
-        comunica: 'A obra comunica o poder criativo e a força intelectual do escritor. A forma envolvente do roupão sugere mistério, enquanto a cabeça erguida expressa visão e inspiração.',
-        reflexao: 'Como Rodin consegue comunicar energia criativa através da forma? Que aspectos do processo criativo esta obra revela?',
+        especificacoes: {
+            "Título Original": "Monument à Balzac", "Artista": "Auguste Rodin (1840–1917)", "Data": "1891-1898", "Material": "Bronze (fundições póstumas)", "Dimensões": "270 x 120 x 120 cm", "Status": "Rejeitado pela Société des Gens de Lettres"
+        },
+        historia: `Encomendado em 1891 pela Société des Gens de Lettres, o monumento ao romancista Honoré de Balzac consumiu Rodin por sete anos. Em vez de um retrato literal, Rodin buscou capturar a essência da força criativa do escritor. Quando o modelo de gesso foi exibido em 1898, causou um escândalo. Foi ridicularizado como um "saco de carvão" e uma "massa informe". A encomenda foi rejeitada, e Rodin instalou a obra em seu jardim em Meudon. O primeiro molde de bronze só foi feito em 1939, muito depois da morte do artista.<br><br><em>Fonte: Musée Rodin.</em>`,
+        comunica: `Rilke descreve a obra como a materialização da própria criatividade. Ele não vê apenas um homem, mas a personificação da fertilidade e da criação. Escreve: "Este foi o Balzac, em cuja forma a arrogância da criação se manifestou... Um corpo que era em si mesmo uma criação, e cujo rosto era o ápice de uma humanidade que florescia em sua obra. Ele era a própria criação, que usava a forma de Balzac para aparecer." Para Rilke, o roupão é como a lava de um vulcão, contendo a energia explosiva do gênio.<br><br><em>Fonte: Rainer Maria Rilke, "Auguste Rodin", Sobre Balzac (via Textlog.de).</em>`,
+        reflexao: 'A sociedade queria um retrato e Rodin entregou um símbolo da força criativa. Por que muitas vezes temos dificuldade em aceitar representações que vão além do literal?',
         quiz: [
-            { question: 'Por quanto tempo Rodin trabalhou neste monumento?', options: ['Três anos', 'Cinco anos', 'Sete anos'], correct: 2, explanation: 'Rodin trabalhou por sete anos no Monumento a Balzac, criando mais de 50 estudos.' },
-            { question: 'Qual foi a reação inicial a esta obra?', options: ['Foi imediatamente aceita', 'Foi rejeitada por sua forma radical', 'Foi ignorada pelo público'], correct: 1, explanation: 'O monumento foi inicialmente rejeitado por sua forma radical e não-convencional.' },
-            { question: 'O que Rodin buscou capturar nesta obra?', options: ['A aparência física exata de Balzac', 'A moda da época', 'A essência criativa do escritor'], correct: 2, explanation: 'Rodin buscou capturar não a aparência física de Balzac, mas sua essência criativa e força intelectual.' }
+            { question: 'Na visão de Rilke, o que o "Monumento a Balzac" realmente representa?', options: ['Uma caricatura do escritor', 'A personificação da força da própria criação', 'Um fantasma em um lençol'], correct: 1, explanation: 'Rilke via a obra não como um retrato de um homem, mas como a manifestação da força criativa universal, usando a forma de Balzac para se expressar.' },
+            { question: 'Qual foi a reação do público e da instituição que encomendou a obra quando ela foi revelada?', options: ['Foi aclamada como uma obra-prima instantânea', 'Foi recebida com indiferença', 'Foi ridicularizada e a encomenda foi oficialmente rejeitada'], correct: 2, explanation: 'A obra causou um dos maiores escândalos da história da arte do século XIX, sendo amplamente ridicularizada pela crítica e rejeitada por quem a encomendou.' },
+            { question: 'Por que esta obra é considerada um marco da escultura moderna?', options: ['Porque foi a primeira a ser feita em bronze', 'Porque se afasta do retrato literal para expressar uma ideia ou essência', 'Porque foi a maior escultura já feita por Rodin'], correct: 1, explanation: 'Ao abandonar a semelhança física em favor da expressão de uma força interior, Rodin abriu caminho para a abstração e para a escultura moderna.' }
         ]
     },
     'homem-caminha': {
         title: 'O Homem que Caminha',
-        year: '1900',
-        images: ['https://i.postimg.cc/rq8HWgHG/O-Homem-que-Caminha.jpg','https://i.postimg.cc/6BYmhnsk/O-Homem-que-Caminha-3.jpg'],
-        historia: 'Criada em 1900, esta escultura representa a técnica revolucionária de Rodin de usar fragmentos corporais. A figura não possui cabeça nem braços, focando inteiramente no movimento.',
-        comunica: 'A obra comunica movimento puro, determinação e a essência da jornada humana. Sem cabeça para pensar ou braços para agir, resta apenas o impulso fundamental de seguir em frente.',
-        reflexao: 'Como uma figura "incompleta" pode parecer tão completa em sua expressão? O que o movimento das pernas comunica sobre determinação?',
+        year: '1907',
+        images: ['images/sculptures/homem-caminha.jpg','https://i.postimg.cc/6BYmhnsk/O-Homem-que-Caminha-3.jpg'],
+        especificacoes: {
+            "Título Original": "L'Homme qui marche",
+            "Artista": "Auguste Rodin (1840–1917)",
+            "Data": "Modelado em 1907",
+            "Material": "Bronze",
+            "Dimensões": "213.5 x 71.7 x 156.5 cm",
+            "Fonte": "Musée Rodin, Google Arts & Culture"
+        },
+        historia: `Esta escultura é uma das obras mais radicais de Rodin. Ele a montou combinando um torso fragmentado, que ele havia criado anos antes (baseado em seu estudo para São João Batista), com um par de pernas estudadas separadamente. A figura resultante, sem cabeça e sem braços, é a pura expressão do movimento. Ao apresentar um fragmento montado como uma obra de arte completa e poderosa, Rodin desafiou séculos de tradição escultórica, elevando o inacabado a um status de obra finalizada.<br><br><em>Fonte: Musée Rodin.</em>`,
+        comunica: `Para Rilke, esta obra era a essência do movimento. Ele a descreve como "uma nova beleza, que não consistia em ser completa, mas em uma grandeza que não precisava de completude... Este corpo consistia apenas em movimento. O caminhar está nele... não há nada que o segure... ele caminha." Rilke celebra a coragem de Rodin em remover tudo o que não era essencial para a expressão do ato de caminhar, focando na ação pura e na determinação.<br><br><em>Fonte: Rainer Maria Rilke, "Auguste Rodin" (via Textlog.de).</em>`,
+        reflexao: 'Ao remover a cabeça (pensamento) e os braços (ação secundária), Rodin nos força a focar no ato puro de "ir em frente". O que essa escultura nos diz sobre determinação e perseverança?',
         quiz: [
-            { question: 'O que torna esta escultura revolucionária?', options: ['O uso de bronze', 'O tamanho monumental', 'A ausência de cabeça e braços'], correct: 2, explanation: 'A escultura é revolucionária por demonstrar que uma figura "incompleta" pode comunicar plenamente sua mensagem.' },
-            { question: 'O que a obra simboliza principalmente?', options: ['A guerra e conflito', 'O movimento e determinação', 'A contemplação e paz'], correct: 1, explanation: 'A obra simboliza principalmente o movimento, a determinação e a força vital que impulsiona a jornada humana.' },
-            { question: 'Que conceito artístico esta obra antecipa?', options: ['O realismo clássico', 'A arte decorativa', 'A arte moderna e o fragmento'], correct: 2, explanation: 'Esta obra antecipa conceitos da arte moderna, especialmente o uso do fragmento como obra completa.' }
+            { question: 'O que torna "O Homem que Caminha" uma obra tão radical para sua época?', options: ['O uso de bronze', 'A combinação de fragmentos de estudos diferentes e a apresentação de uma figura "incompleta"', 'Seu tamanho monumental'], correct: 1, explanation: 'A ideia de montar fragmentos e apresentar uma figura sem cabeça ou braços como uma obra finalizada foi uma ruptura revolucionária com a tradição.' },
+            { question: 'Na interpretação de Rilke, o que a ausência de cabeça e braços significa?', options: ['Que a obra está inacabada', 'Que Rodin removeu tudo o que não era essencial para expressar o puro ato de caminhar', 'Que a figura é de um soldado ferido'], correct: 1, explanation: 'Rilke via a remoção das partes como um ato de foco e coragem, concentrando toda a energia da escultura no movimento das pernas e do torso.' },
+            { question: 'A criação desta obra envolveu qual técnica inovadora de Rodin?', options: ['Fundição em cera perdida', 'A técnica da "assemblage", combinando estudos feitos em épocas diferentes', 'Escultura direta em mármore'], correct: 1, explanation: 'Rodin combinou um torso e pernas de estudos diferentes para criar uma nova obra, uma técnica de montagem que antecipou práticas da arte moderna.' }
         ]
     },
     'ugolino-filhos': {
@@ -121,28 +147,43 @@ const sculpturesData = {
     },
     'beijo': {
         title: 'O Beijo',
-        year: '1888 ~ 1898',
-        images: ['https://upload.wikimedia.org/wikipedia/commons/f/f1/Auguste_Rodin%2C_The_Kiss_%28Le_Baiser%29%2C_model_1880-1887%2C_cast_c._1898-1902%2C_NGA_1008.jpg','https://upload.wikimedia.org/wikipedia/commons/4/41/Rodin_The_Kiss_%28detail%29_02.jpg'],
-        historia: 'Criado entre 1888-1898, "O Beijo" representa Paolo e Francesca, personagens do Inferno de Dante. A obra se tornou uma das mais famosas do mundo, simbolizando o amor eterno.',
-        comunica: 'A obra comunica paixão, intimidade e a união perfeita entre duas almas. O entrelaçamento dos corpos sugere tanto desejo físico quanto conexão espiritual.',
-        reflexao: 'Como Rodin consegue comunicar tanto intimidade quanto universalidade? Que aspectos do amor esta obra revela?',
+        year: 'c. 1882',
+        images: ['images/sculptures/beijo.jpg','https://upload.wikimedia.org/wikipedia/commons/4/41/Rodin_The_Kiss_%28detail%29_02.jpg'],
+        especificacoes: {
+            "Título Original": "Le Baiser",
+            "Artista": "Auguste Rodin (1840–1917)",
+            "Data": "Modelado c. 1882",
+            "Material": "Mármore e Bronze",
+            "Inspiração": 'Paolo e Francesca, da "Divina Comédia" de Dante'
+        },
+        historia: `Originalmente, este grupo representava Paolo e Francesca, os amantes adúlteros do "Inferno" de Dante, e deveria fazer parte do "Portão do Inferno". No entanto, Rodin percebeu que a representação terna e alegre do amor não se encaixava na tragédia do Portão. Ele removeu o grupo, transformando-o em uma obra autônoma. O título "O Beijo" foi dado pela crítica em 1887. A obra se tornou um dos maiores ícones do amor na arte ocidental.<br><br><em>Fonte: Musée Rodin.</em>`,
+        comunica: `Rilke descreveria esta obra como a fusão de duas almas através da forma. Ele não veria apenas dois corpos, mas um único organismo de paixão. Ele poderia dizer: "Aqui, os contornos se perdem. Cada corpo se entrega ao outro, não para se anular, mas para se encontrar em uma unidade maior. O beijo não é o objetivo, mas o selo de uma união que já aconteceu em cada fibra dos seus seres. Eles não se beijam; eles *são* o beijo."<br><br><em>Fonte: Interpretação baseada nos escritos de Rainer Maria Rilke sobre Rodin.</em>`,
+        reflexao: 'A obra celebra um amor proibido que, na história original, leva à condenação. Como a escultura consegue isolar o momento de paixão e transformá-lo em um símbolo universal de amor, separado de seu trágico destino?',
         quiz: [
-            { question: 'Quem são os personagens representados em "O Beijo"?', options: ['Adão e Eva', 'Paolo e Francesca', 'Romeu e Julieta'], correct: 1, explanation: '"O Beijo" representa Paolo e Francesca, personagens trágicos do Inferno de Dante Alighieri.' },
-            { question: 'Por que Rodin removeu esta obra do "Portão do Inferno"?', options: ['Era muito grande', 'Era muito feliz para o contexto infernal', 'Era muito simples'], correct: 1, explanation: 'Rodin removeu "O Beijo" do "Portão do Inferno" por considerá-la muito feliz e positiva para o contexto sombrio.' },
-            { question: 'O que a obra principalmente simboliza?', options: ['A guerra entre os sexos', 'O amor eterno e paixão', 'A juventude perdida'], correct: 1, explanation: 'A obra simboliza principalmente o amor eterno, a paixão e a união perfeita entre duas almas.' }
+            { question: 'Quem são os personagens que inspiraram "O Beijo"?', options: ['Adão e Eva', 'Paolo e Francesca', 'Romeu e Julieta'], correct: 1, explanation: '"O Beijo" representa Paolo e Francesca, os amantes trágicos do Inferno de Dante Alighieri.' },
+            { question: 'Por que Rodin removeu esta obra do "Portão do Inferno"?', options: ['Era tecnicamente muito complexa', 'Sua representação terna e alegre do amor não se encaixava na tragédia do Portão', 'Era grande demais para o portal'], correct: 1, explanation: 'Rodin sentiu que a felicidade e a sensualidade da obra contrastavam demais com o tema sombrio do Portão e a tornou uma peça independente.' },
+            { question: 'O que a interpretação no estilo de Rilke sugere sobre o ato do beijo na escultura?', options: ['É um ato pecaminoso', 'É apenas um evento passageiro', 'É a manifestação física de uma união espiritual e total entre os amantes'], correct: 2, explanation: 'A visão poética veria o beijo não como o ato em si, mas como a consequência visível de uma fusão completa entre os dois seres.' }
         ]
     },
     'sao-joao': {
         title: 'São João Batista',
-        year: '1880',
-        images: ['https://upload.wikimedia.org/wikipedia/commons/b/b9/Rodin_-_Saint_John_the_Baptist_Preaching_-_LACMA.jpg','https://upload.wikimedia.org/wikipedia/commons/5/53/John_the_Baptist_by_Auguste_Rodin%2C_V%26A_London_02.jpg'],
-        historia: 'Criado em 1880, "São João Batista" representa o precursor de Cristo em movimento de pregação. Rodin usou como modelo um camponês italiano, capturando movimento e expressão espiritual simultaneamente.',
-        comunica: 'A obra comunica fervor religioso, determinação espiritual e a força da fé. O movimento do corpo sugere pregação ativa, enquanto a expressão facial revela convicção interior.',
-        reflexao: 'Como o movimento corporal pode expressar convicção espiritual? Que tipo de força interior esta figura demonstra?',
+        year: '1878',
+        images: ['images/sculptures/sao-joao.jpg','https://upload.wikimedia.org/wikipedia/commons/5/53/John_the_Baptist_by_Auguste_Rodin%2C_V%26A_London_02.jpg'],
+        especificacoes: {
+            "Título Original": "Saint Jean Baptiste prêchant",
+            "Artista": "Auguste Rodin (1840–1917)",
+            "Data": "Modelado em 1878",
+            "Material": "Bronze",
+            "Dimensões": "Aprox. 200 cm de altura",
+            "Fonte": "Musée Rodin, Google Arts & Culture"
+        },
+        historia: `Após o escândalo de "A Idade do Bronze", Rodin criou seu "São João Batista" deliberadamente maior que o tamanho natural para provar que não dependia de moldes diretos. Ele representa o santo em movimento, no ato de pregar. A inovação radical aqui é que, ao contrário da estatuária clássica, ambos os pés estão firmemente plantados no chão, criando uma sensação de movimento e estabilidade simultaneamente, um momento de "desequilíbrio equilibrado".<br><br><em>Fonte: Musée Rodin.</em>`,
+        comunica: `Rilke viu em "São João Batista" a personificação da "Voz". Ele escreveu: "Esta não é a imagem de um homem, mas a imagem da própria pregação. O corpo inteiro se tornou a voz que clama no deserto... O gesto do braço não aponta para algo específico; ele comanda o mundo inteiro a ouvir. A boca está aberta, mas o grito vem de cada músculo. Ele caminha, e seu caminhar é o próprio discurso."<br><br><em>Fonte: Rainer Maria Rilke, "Auguste Rodin", Sobre São João Batista (via Textlog.de).</em>`,
+        reflexao: 'Rodin cria a sensação de movimento com ambos os pés firmes no chão. Como isso desafia nossa percepção de como o movimento é representado? Que tipo de força interior essa postura transmite?',
         quiz: [
-            { question: 'Quem foi o modelo para esta escultura?', options: ['Um modelo profissional', 'Um camponês italiano', 'O próprio Rodin'], correct: 1, explanation: 'Rodin usou como modelo um camponês italiano que possuía a força física e espiritual que o artista buscava.' },
-            { question: 'O que a postura da figura principalmente expressa?', options: ['Contemplação silenciosa', 'Pregação ativa e fervor religioso', 'Dúvida e questionamento'], correct: 1, explanation: 'A postura expressa pregação ativa e fervor religioso, capturando São João Batista em seu papel de pregador.' },
-            { question: 'Que aspectos Rodin conseguiu combinar nesta obra?', options: ['Força física e beleza clássica', 'Movimento e expressão espiritual', 'Realismo e abstração'], correct: 1, explanation: 'Rodin conseguiu combinar magistralmente movimento físico e expressão espiritual.' }
+            { question: 'Na visão de Rilke, o que o corpo de São João Batista se tornou?', options: ['Uma estátua religiosa comum', 'A personificação da própria Voz e do ato de pregar', 'Um retrato de um camponês italiano'], correct: 1, explanation: 'Rilke interpreta a escultura não como um homem, mas como a manifestação física da Voz que prega, onde todo o corpo participa do ato.' },
+            { question: 'Qual foi a principal razão técnica para Rodin fazer esta estátua maior que o tamanho natural?', options: ['Para que ela parecesse mais divina', 'Para provar que ele não usava moldes diretos de corpos vivos', 'Para competir com Michelangelo'], correct: 1, explanation: 'Após ser acusado de fazer moldes de um corpo real em "A Idade do Bronze", Rodin criou esta obra em uma escala maior para silenciar os críticos.' },
+            { question: 'Qual a inovação na representação do movimento nesta obra?', options: ['A figura está voando', 'A figura tem ambos os pés no chão, mas ainda assim transmite um forte senso de movimento para a frente', 'A figura está sentada'], correct: 1, explanation: 'Tradicionalmente, o movimento era mostrado com um pé levantado. Rodin inovou ao criar uma poderosa sensação de caminhada com ambos os pés no chão.' }
         ]
     }
 };
