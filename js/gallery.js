@@ -5,7 +5,7 @@ const sculpturesData = {
     'idade-bronze': {
         title: 'A Idade do Bronze',
         year: '1876',
-        images: [ 'images/sculptures/idade-bronze.jpg', 'https://i.postimg.cc/13Gj8C3f/idade-bronze-2.jpg', 'https://i.postimg.cc/0jKTY3jN/idade-bronze-3.jpg' ],
+        images: [ 'https://i.postimg.cc/gGnJYyKs/The-Age-of-Bronze-1.jpg', 'https://i.postimg.cc/c01CzGgV/The-Age-of-Bronze-2.jpg' ],
         especificacoes: {
             "Título Original": "L'Âge d'airain", "Artista": "Auguste Rodin (1840–1917)", "Data": "Modelado em 1876, fundido c. 1906", "Material": "Bronze", "Dimensões": "182.9 x 59.1 x 61.6 cm", "Fonte": "The Metropolitan Museum of Art"
         },
@@ -21,7 +21,7 @@ const sculpturesData = {
     'portao-inferno': {
         title: 'Portão do Inferno',
         year: '1880 - 1917',
-        images: ['images/sculptures/portao-inferno.jpg'],
+        images: ['https://i.postimg.cc/R9zGxkhG/Gate-of-hell.jpg'],
         especificacoes: {
             "Título Original": "La Porte de l'Enfer", "Artista": "Auguste Rodin (1840–1917)", "Data": "Concebido em 1880, nunca completamente finalizado", "Material": "Bronze (fundições póstumas)", "Dimensões": "Aprox. 6m x 4m x 1m", "Inspiração": "A Divina Comédia, de Dante Alighieri"
         },
@@ -37,7 +37,7 @@ const sculpturesData = {
     'burgueses-calais': {
         title: 'Os Burgueses de Calais',
         year: '1884-1895',
-        images: [ 'images/sculptures/burgueses-calais.jpg' /* ... outras imagens ... */ ],
+        images: [ 'https://i.postimg.cc/xY47H0P5/Burgueses-de-Calais.jpg', 'https://i.postimg.cc/jsMvbXgc/Burgueses-de-Calais-1.jpg', 'https://i.postimg.cc/Q8VmxTv3/Burgueses-de-Calais-2.jpg', 'https://i.postimg.cc/VfTRSNcb/Burgueses-de-Calais-3.jpg', 'https://i.postimg.cc/4sc89py4/Burgueses-de-Calais-4.jpg', 'https://i.postimg.cc/7qyKMbJ3/Burgueses-de-Calais-5.jpg', 'https://i.postimg.cc/pPYq0xKg/Burgueses-de-Calais-6.jpg', 'https://i.postimg.cc/KZGQwVN4/Burgueses-de-Calais-7.jpg', 'https://i.postimg.cc/HHRZn6pP/Burgueses-de-Calais-8.jpg' ],
         especificacoes: {
             "Título Original": "Les Bourgeois de Calais", "Artista": "Auguste Rodin (1840–1917)", "Data": "Modelado em 1884-1895", "Material": "Bronze", "Dimensões": "209.6 × 238.8 × 190.5 cm", "Evento Histórico": "Cerco de Calais por Eduardo III em 1347"
         },
@@ -53,7 +53,7 @@ const sculpturesData = {
     'adao': {
         title: 'Adão ou A Criação do Homem',
         year: '1880-1881',
-        images: [ 'images/sculptures/adao.jpg', 'https://i.postimg.cc/XWP2cKmS/Ad-o-ou-A-Cria-o-do-Homem-1.jpg', 'https://i.postimg.cc/Hkmx7Nht/Ad-o-ou-A-Cria-o-do-Homem-2.jpg' ],
+        images: [ 'https://i.postimg.cc/2rRsJ9Nf/Ad-o-ou-A-Cria-o-do-Homem-1.jpg', 'https://i.postimg.cc/MW6wMM3r/Ad-o-ou-A-Cria-o-do-Homem-2.jpg', 'https://i.postimg.cc/4sQS0J1z/Ad-o-ou-A-Cria-o-do-Homem-3.jpg' ],
         especificacoes: {
             "Título Original": "Adam", "Artista": "Auguste Rodin (1840–1917)", "Data": "Modelado em 1880-81", "Material": "Bronze", "Dimensões": "199.4 x 77.5 x 77.8 cm", "Fonte": "The Metropolitan Museum of Art"
         },
@@ -101,7 +101,7 @@ const sculpturesData = {
     'homem-caminha': {
         title: 'O Homem que Caminha',
         year: '1907',
-        images: ['images/sculptures/homem-caminha.jpg','https://i.postimg.cc/6BYmhnsk/O-Homem-que-Caminha-3.jpg'],
+        images: ['https://i.postimg.cc/rq8HWgHG/O-Homem-que-Caminha.jpg','https://i.postimg.cc/6BYmhnsk/O-Homem-que-Caminha-3.jpg'],
         especificacoes: {
             "Título Original": "L'Homme qui marche",
             "Artista": "Auguste Rodin (1840–1917)",
@@ -122,7 +122,7 @@ const sculpturesData = {
     'ugolino-filhos': {
         title: 'Ugolino e seus Filhos',
         year: '1882',
-        images: ['images/sculptures/ugolino-filhos.jpg','https://upload.wikimedia.org/wikipedia/commons/d/d4/Auguste_rodin%2C_ugolino%2C_1906%2C_02.JPG','https://upload.wikimedia.org/wikipedia/commons/6/68/Auguste_rodin%2C_ugolino%2C_1906%2C_01.JPG'],
+        images: ['https://upload.wikimedia.org/wikipedia/commons/c/cd/Ugolin_et_ses_enfants_Mus%C3%A9e_Rodin_S.1427_Paris.jpg','https://upload.wikimedia.org/wikipedia/commons/d/d4/Auguste_rodin%2C_ugolino%2C_1906%2C_02.JPG','https://upload.wikimedia.org/wikipedia/commons/6/68/Auguste_rodin%2C_ugolino%2C_1906%2C_01.JPG'],
         especificacoes: {
             "Título Original": "Ugolin et ses enfants",
             "Artista": "Auguste Rodin (1840–1917)",
@@ -143,7 +143,7 @@ const sculpturesData = {
     'eva': {
         title: 'Eva',
         year: '1881',
-        images: ['images/sculptures/eva.jpg','https://upload.wikimedia.org/wikipedia/commons/f/f8/Staedel-Frankfurt-Eva-von-Auguste-Rodin-Ffm-041.jpg','https://upload.wikimedia.org/wikipedia/commons/1/18/Staedel-Frankfurt-Eva-von-Auguste-Rodin-Ffm-042.jpg'],
+        images: ['https://i.postimg.cc/rTvYgqbw/eva.jpg','https://upload.wikimedia.org/wikipedia/commons/f/f8/Staedel-Frankfurt-Eva-von-Auguste-Rodin-Ffm-041.jpg','https://upload.wikimedia.org/wikipedia/commons/1/18/Staedel-Frankfurt-Eva-von-Auguste-Rodin-Ffm-042.jpg'],
         especificacoes: {
             "Título Original": "Ève",
             "Artista": "Auguste Rodin (1840–1917)",
@@ -164,7 +164,7 @@ const sculpturesData = {
     'beijo': {
         title: 'O Beijo',
         year: 'c. 1882',
-        images: ['images/sculptures/beijo.jpg','https://upload.wikimedia.org/wikipedia/commons/4/41/Rodin_The_Kiss_%28detail%29_02.jpg'],
+        images: ['https://upload.wikimedia.org/wikipedia/commons/f/f1/Auguste_Rodin%2C_The_Kiss_%28Le_Baiser%29%2C_model_1880-1887%2C_cast_c.1898-1902%2C_NGA_1008.jpg','https://upload.wikimedia.org/wikipedia/commons/4/41/Rodin_The_Kiss%28detail%29_02.jpg'],
         especificacoes: {
             "Título Original": "Le Baiser",
             "Artista": "Auguste Rodin (1840–1917)",
@@ -184,7 +184,7 @@ const sculpturesData = {
     'sao-joao': {
         title: 'São João Batista',
         year: '1878',
-        images: ['images/sculptures/sao-joao.jpg','https://upload.wikimedia.org/wikipedia/commons/5/53/John_the_Baptist_by_Auguste_Rodin%2C_V%26A_London_02.jpg'],
+        images: ['https://upload.wikimedia.org/wikipedia/commons/b/b9/Rodin_-Saint_John_the_Baptist_Preaching-_LACMA.jpg','https://upload.wikimedia.org/wikipedia/commons/5/53/John_the_Baptist_by_Auguste_Rodin%2C_V%26A_London_02.jpg'],
         especificacoes: {
             "Título Original": "Saint Jean Baptiste prêchant",
             "Artista": "Auguste Rodin (1840–1917)",
