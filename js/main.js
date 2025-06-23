@@ -12,6 +12,7 @@ class RodinApp {
         this.setupSectionObserver();
         this.initializeModals();
         this.setupTimelineToggle();
+        this.setupManualCards(); // <-- ADICIONADO!
     }
 
     // Configura o clique nos links para rolar suavemente até a seção
@@ -38,6 +39,21 @@ class RodinApp {
         if (targetSection) {
             targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+    }
+
+    // NOVO MÉTODO - para os cards do Manual do Livro Digital
+    setupManualCards() {
+        // Seleciona todos os cards com o atributo data-target
+        document.querySelectorAll('.manual-item[data-target]').forEach(card => {
+            card.style.cursor = "pointer";
+            card.addEventListener('click', function () {
+                const targetId = card.getAttribute('data-target');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     }
 
     // Configura o observador que atualiza o link ativo conforme a rolagem
