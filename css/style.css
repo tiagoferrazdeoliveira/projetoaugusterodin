@@ -22,7 +22,7 @@
     --spacing-xs: 8px;
     --spacing-sm: 16px;
     --spacing-md: 32px;
-    --spacing-lg: 64px;
+    --spacing-lg: 25px;
     --spacing-xl: 96px;
     
     /* Transições */
@@ -131,7 +131,7 @@ body {
    3. SEÇÕES E TÍTULOS
    ========================================================================== */
 .section {
-    min-height: 100vh;
+    min-height: 1vh;
     padding: var(--spacing-xl) 0;
     padding-top: calc(var(--spacing-xl) + 20px);
     position: relative;
