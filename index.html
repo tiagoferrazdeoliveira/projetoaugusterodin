@@ -43,13 +43,24 @@
                 </div>
                 <div class="manual">
                     <h2>Manual do Livro Digital</h2>
-                    <div class="manual-grid">
-                        <div class="manual-item"><h3>Como Navegar</h3><p>Use o menu superior para rolar suavemente até as diferentes seções. A experiência é uma única página contínua.</p></div>
-                        <div class="manual-item"><h3>Galeria Interativa</h3><p>Clique nas esculturas para ver detalhes, histórias e participar de quizzes.</p></div>
-                        <div class="manual-item"><h3>Linha do Tempo</h3><p>Explore a vida de Rodin cronologicamente. Clique nos eventos para descobrir mais.</p></div>
-                        <div class="manual-item"><h3>Glossário</h3><p>Aprenda termos artísticos com explicações simples e experimentos práticos.</p></div>
-                    </div>
-                </div>
+<div class="manual-grid">
+    <div class="manual-item" data-target="#historia">
+        <h3>Como Navegar</h3>
+        <p>Use o menu superior para rolar suavemente até as diferentes seções. A experiência é uma única página contínua.</p>
+    </div>
+    <div class="manual-item" data-target="#galeria">
+        <h3>Galeria Interativa</h3>
+        <p>Clique nas esculturas para ver detalhes, histórias e participar de quizzes.</p>
+    </div>
+    <div class="manual-item" data-target="#linha-tempo">
+        <h3>Linha do Tempo</h3>
+        <p>Explore a vida de Rodin cronologicamente. Clique nos eventos para descobrir mais.</p>
+    </div>
+    <div class="manual-item" data-target="#glossario">
+        <h3>Glossário</h3>
+        <p>Aprenda termos artísticos com explicações simples e experimentos práticos.</p>
+    </div>
+</div>
             </section>
 
         <!-- Seção História -->
@@ -84,19 +95,34 @@ Rodin faleceu em Meudon, na França, em 1917. Sua obra continua sendo amplamente
         </section>
 
         <!-- Seção Influência -->
-        <section id="influencia" class="section section-dark">
-            <div class="container">
-                <h1 class="section-title">INFLUÊNCIA</h1>
-                <div class="influencia-grid">
-                    <div class="influencia-item" data-influence="revolucao"><h3>Revolução na Escultura</h3><p>Rodin quebrou as convenções clássicas, introduzindo movimento e emoção nas formas estáticas, transformando para sempre a arte escultórica.</p></div>
-                    <div class="influencia-item" data-influence="fragmento"><h3>Técnica do Fragmento</h3><p>Pioneiro no uso de fragmentos corporais como obras completas, influenciando gerações de artistas modernos e contemporâneos.</p></div>
-                    <div class="influencia-item" data-influence="expressionismo"><h3>Expressionismo Escultórico</h3><p>Suas obras expressam emoções profundas através da forma, antecipando movimentos artísticos do século XX.</p></div>
-                    <div class="influencia-item" data-influence="arte-publica"><h3>Arte Pública Moderna</h3><p>Redefiniu o conceito de monumento público, criando obras que dialogam com o espaço urbano de forma inovadora.</p></div>
-                    <div class="influencia-item" data-influence="artistas"><h3>Influência em Artistas</h3><p>Inspirou escultores como Brâncuși, Giacometti e Moore, estabelecendo as bases da escultura moderna.</p></div>
-                    <div class="influencia-item" data-influence="legado"><h3>Legado Contemporâneo</h3><p>Suas técnicas e filosofia artística continuam relevantes na arte contemporânea, influenciando instalações e performances.</p></div>
-                </div>
+<section id="influencia" class="section section-dark">
+    <div class="container">
+        <h1 class="section-title">INFLUÊNCIA</h1>
+        <div class="influencia-grid">
+            <!-- ANTIGO: 
+            <div class="influencia-item" data-influence="revolucao"><h3>Revolução na Escultura</h3><p>Rodin quebrou as convenções clássicas...</p></div>
+            ... outros cards ...
+            -->
+            <!-- NOVO: -->
+            <div class="influencia-item" data-influence="Michelangelo">
+                <h3>Michelangelo</h3>
+                <p>Expressividade corporal e dramaticidade dos gestos, inspiração para Rodin.</p>
             </div>
-        </section>
+            <div class="influencia-item" data-influence="Donatello">
+                <h3>Donatello</h3>
+                <p>Referência para Rodin no realismo psicológico e na narrativa escultórica.</p>
+            </div>
+            <div class="influencia-item" data-influence="impressionismo">
+                <h3>Realismo e Impressionismo</h3>
+                <p>Influências modernas que ajudaram Rodin a romper com o academicismo.</p>
+            </div>
+            <div class="influencia-item" data-influence="Outras-referencias">
+                <h3>Outras referências</h3>
+                <p>Artistas, movimentos e o contexto do século XIX que moldaram a visão de Rodin.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- Seção Linha do Tempo -->
         <section id="linha-tempo" class="section section-light">
@@ -218,5 +244,14 @@ Rodin faleceu em Meudon, na França, em 1917. Sua obra continua sendo amplamente
     <script src="js/timeline.js"></script>
     <script src="js/quiz.js"></script>
     <script src="js/influence.js"></script>
+<!-- Modal para Influência -->
+<div id="influence-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" style="float:right; font-size:2rem; cursor:pointer;">&times;</span>
+        <h2 class="modal-title"></h2>
+        <div class="modal-details" style="margin-top:1em;"></div>
+    </div>
+</div>
+</div>
 </body>
 </html>
