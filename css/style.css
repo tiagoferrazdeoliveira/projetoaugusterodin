@@ -1415,3 +1415,76 @@ body {
     color: #ccc; /* cinza mais claro no hover para destacar */
     text-decoration: underline;
 }
+.nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    display: none; /* só aparece no mobile */
+    align-items: center;
+    z-index: 1201;
+}
+
+.hamburger {
+    width: 28px;
+    height: 3px;
+    background: var(--primary-purple);
+    display: block;
+    position: relative;
+    border-radius: 2px;
+    transition: background 0.2s;
+}
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 28px;
+    height: 3px;
+    background: var(--primary-purple);
+    border-radius: 2px;
+    transition: transform 0.3s, top 0.3s, opacity 0.2s;
+}
+.hamburger::before {
+    top: -8px;
+}
+.hamburger::after {
+    top: 8px;
+}
+
+/* Mobile: Menu escondido por padrão */
+@media (max-width: 900px) {
+    .nav-toggle {
+        display: flex;
+    }
+    .nav-list {
+        position: absolute;
+        top: 64px; /* ajuste conforme sua header */
+        right: 16px;
+        left: 16px;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+        box-shadow: var(--shadow-lg);
+        padding: var(--spacing-lg) var(--spacing-md);
+        border-radius: 16px;
+        z-index: 1200;
+        display: none;
+        animation: fadeIn 0.3s;
+    }
+    .nav-list.active {
+        display: flex;
+    }
+}
+
+/* Opcional: Hambúrguer animado quando aberto */
+.nav-toggle.open .hamburger {
+    background: transparent;
+}
+.nav-toggle.open .hamburger::before {
+    transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle.open .hamburger::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
