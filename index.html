@@ -19,8 +19,11 @@
                     <span class="logo-text">AUGUSTE RODIN</span>
                 </div>
             </a>
-            <nav class="nav">
-                <ul class="nav-list">
+<nav class="nav">
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger"></span>
+    </button>
+    <ul class="nav-list">
                     <li><a href="#inicio" class="nav-link" data-section="inicio">INÍCIO</a></li>
                     <li><a href="#historia" class="nav-link" data-section="historia">HISTÓRIA</a></li>
                     <li><a href="#influencia" class="nav-link" data-section="influencia">INFLUÊNCIA</a></li>
@@ -283,5 +286,16 @@ Rodin faleceu em Meudon, na França, em 1917. Sua obra continua sendo amplamente
     </div>
 </div>
 </div>
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navList = document.querySelector('.nav-list');
+  
+  navToggle.addEventListener('click', function () {
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !expanded);
+    this.classList.toggle('open');
+    navList.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
