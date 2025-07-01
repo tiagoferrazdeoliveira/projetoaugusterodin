@@ -368,7 +368,6 @@ class Gallery {
             await fetch(SCRIPT_URL, {
                 method: 'POST',
                 // Usar o modo 'cors' é o ideal se o Apps Script estiver configurado corretamente
-                mode: 'cors', 
                 headers: {
                     'Content-Type': 'application/json',
                 },
