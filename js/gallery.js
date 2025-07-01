@@ -205,315 +205,258 @@ const sculpturesData = {
 };
 
 class Gallery {
-    constructor() {
-        this.currentSculpture = null;
-        this.modal = document.getElementById('sculpture-modal');
-        this.modalBody = this.modal.querySelector('.modal-body');
-        this.zoomLevel = 1;
-        this.init();
+  constructor() {
+    this.currentSculpture = null;
+    this.modal = document.getElementById('sculpture-modal');
+    this.modalBody = this.modal.querySelector('.modal-body');
+    this.zoomLevel = 1;
+    this.init();
+  }
+
+  init() {
+    this.bindEvents();
+    this.setupZoomControls();
+  }
+
+  bindEvents() {
+    document.addEventListener('click', (e) => {
+      const galleryItem = e.target.closest('.gallery-item');
+      if (galleryItem) {
+        const sculptureId = galleryItem.dataset.sculpture;
+        this.showSculptureModal(sculptureId);
+      }
+    });
+
+    this.modal.addEventListener('click', (e) => {
+      if (e.target.classList.contains('tab-button')) {
+        this.showTab(e.target.dataset.tab);
+      }
+    });
+
+    this.modal.addEventListener('submit', (e) => {
+      if (e.target.id === 'comment-form') {
+        e.preventDefault();
+        this.handleCommentSubmit(e.target);
+      }
+    });
+  }
+
+  setupZoomControls() {
+    document.getElementById('zoom-in')?.addEventListener('click', () => this.zoom(1.2));
+    document.getElementById('zoom-out')?.addEventListener('click', () => this.zoom(0.8));
+    document.getElementById('zoom-reset')?.addEventListener('click', () => this.resetZoom());
+  }
+
+  showSculptureModal(sculptureId) {
+    const sculpture = sculpturesData[sculptureId];
+    if (!sculpture || !sculpture.images?.length) {
+      console.error(`Dados da escultura '${sculptureId}' não encontrados.`);
+      return;
+    }
+    this.currentSculpture = sculptureId;
+    document.getElementById('modal-title').textContent = sculpture.title;
+
+    const mainImage = document.getElementById('modal-image');
+    const thumbnailsContainer = document.getElementById('thumbnails-container');
+    mainImage.src = sculpture.images[0];
+    mainImage.alt = sculpture.title;
+
+    thumbnailsContainer.innerHTML = '';
+    sculpture.images.forEach((src, i) => {
+      const thumb = document.createElement('img');
+      thumb.src = src;
+      thumb.alt = `${sculpture.title} - vista ${i + 1}`;
+      thumb.className = 'thumbnail-img' + (i === 0 ? ' active' : '');
+      thumb.addEventListener('click', () => {
+        mainImage.src = src;
+        thumbnailsContainer.querySelectorAll('img').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+      thumbnailsContainer.appendChild(thumb);
+    });
+
+    this.loadTabContent(sculptureId);
+    this.modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    this.showTab('historia');
+    this.resetZoom();
+  }
+
+  showTab(tabId) {
+    const hideImage = ['quiz', 'analise'].includes(tabId);
+    this.modalBody.classList.toggle('hide-image-view', hideImage);
+
+    this.modal.querySelectorAll('.tab-button').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabId));
+    this.modal.querySelectorAll('.tab-pane').forEach(pane => pane.classList.toggle('active', pane.id === `tab-${tabId}`));
+
+    if (tabId === 'analise') {
+      this.fetchComments(this.currentSculpture);
+    }
+  }
+
+  async fetchComments(sculptureId) {
+    const container = document.getElementById('comments-list');
+    container.innerHTML = '<p>Carregando comentários...</p>';
+    try {
+      const resp = await fetch(`${SCRIPT_URL}?sculptureId=${encodeURIComponent(sculptureId)}`);
+      if (!resp.ok) throw new Error(resp.statusText);
+      const comments = await resp.json();
+      if (!comments.length) {
+        container.innerHTML = '<p>Seja o primeiro a deixar uma análise sobre esta obra!</p>';
+        return;
+      }
+      comments.sort((a, b) => new Date(b.Timestamp) - new Date(a.Timestamp));
+      container.innerHTML = comments.map(c => `
+        <div class="comment-item">
+          <strong class="comment-author">${this.sanitizeHTML(c.name)}</strong>
+          <p class="comment-text">${this.sanitizeHTML(c.comment)}</p>
+          <span class="comment-date">${new Date(c.Timestamp).toLocaleDateString('pt-BR')}</span>
+        </div>
+      `).join('');
+    } catch (err) {
+      console.error('Erro ao buscar comentários:', err);
+      container.innerHTML = '<p>Não foi possível carregar os comentários.</p>';
+    }
+  }
+
+  async handleCommentSubmit(form) {
+    const nameInput = form.querySelector('input[name="name"]');
+    const commentInput = form.querySelector('textarea[name="comment"]');
+    const btn = form.querySelector('button');
+
+    if (!nameInput.value.trim() || !commentInput.value.trim()) {
+      alert('Por favor, preencha seu nome e comentário.');
+      return;
     }
 
-    init() {
-        this.bindEvents();
-        this.setupZoomControls();
+    btn.disabled = true;
+    const originalText = btn.textContent;
+    btn.textContent = 'Enviando...';
+
+    // ==> Envio como application/x-www-form-urlencoded <==
+    const params = new URLSearchParams();
+    params.append('sculptureId', this.currentSculpture);
+    params.append('name', nameInput.value.trim());
+    params.append('comment', commentInput.value.trim());
+
+    try {
+      const resp = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: params
+      });
+      const json = await resp.json();
+      if (json.result === 'success') {
+        form.reset();
+        this.fetchComments(this.currentSculpture);
+      } else {
+        throw new Error(json.message || 'Falha ao gravar comentário.');
+      }
+    } catch (err) {
+      console.error('Erro ao enviar comentário:', err);
+      alert('Ocorreu um erro ao enviar seu comentário. Tente novamente.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = originalText;
+    }
+  }
+
+  sanitizeHTML(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  loadTabContent(sculptureId) {
+    const s = sculpturesData[sculptureId];
+    document.getElementById('historia-content').innerHTML = `<h3>História da Obra</h3><p>${s.historia}</p>`;
+    document.getElementById('comunica-content').innerHTML = `<h3>O que Comunica</h3><p>${s.comunica}</p>`;
+    document.getElementById('reflexao-content').innerHTML = `<h3>Reflexão</h3><p>${s.reflexao}</p>`;
+
+    // especificações
+    const specs = document.getElementById('especificacoes-content');
+    if (s.especificacoes) {
+      specs.innerHTML = '<h3>Ficha Técnica</h3><ul class="spec-list">' +
+        Object.entries(s.especificacoes).map(([lbl, val]) =>
+          `<li class="spec-item"><span class="spec-label">${lbl}:</span> <span class="spec-value">${val}</span></li>`
+        ).join('') +
+        '</ul>';
+    } else {
+      specs.innerHTML = '<p>Especificações não disponíveis.</p>';
     }
 
-    bindEvents() {
-        document.addEventListener('click', (e) => {
-            const galleryItem = e.target.closest('.gallery-item');
-            if (galleryItem) {
-                const sculptureId = galleryItem.dataset.sculpture;
-                this.showSculptureModal(sculptureId);
-            }
-        });
+    this.loadQuiz(sculptureId);
+  }
 
-        this.modal.addEventListener('click', (e) => {
-            if (e.target.classList.contains('tab-button')) {
-                this.showTab(e.target.dataset.tab);
-            }
-        });
+  loadQuiz(sculptureId) {
+    const s = sculpturesData[sculptureId];
+    const container = document.getElementById('quiz-content');
+    let html = '<h3>Quiz Interativo</h3>';
+    s.quiz.forEach((q, i) => {
+      html += `
+        <div class="quiz-question" data-q="${i}">
+          <h4>Pergunta ${i+1}: ${q.question}</h4>
+          <div class="quiz-options">
+            ${q.options.map((opt, idx) =>
+              `<div class="quiz-option" data-option="${idx}">${opt}</div>`
+            ).join('')}
+          </div>
+          <div class="quiz-feedback" style="display:none;"></div>
+        </div>`;
+    });
+    html += `<button class="quiz-submit">Verificar Respostas</button>
+             <div class="quiz-results" style="display:none;margin-top:20px;"></div>`;
+    container.innerHTML = html;
 
-        this.modal.addEventListener('submit', (e) => {
-            if (e.target.id === 'comment-form') {
-                e.preventDefault();
-                this.handleCommentSubmit(e.target);
-            }
-        });
-    }
+    container.querySelectorAll('.quiz-option').forEach(opt =>
+      opt.addEventListener('click', e => {
+        const qEl = e.target.closest('.quiz-question');
+        qEl.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+        e.target.classList.add('selected');
+      })
+    );
+    container.querySelector('.quiz-submit').addEventListener('click', () => this.submitQuiz(sculptureId));
+  }
 
-    setupZoomControls() {
-        const zoomIn = document.getElementById('zoom-in');
-        const zoomOut = document.getElementById('zoom-out');
-        const zoomReset = document.getElementById('zoom-reset');
+  submitQuiz(sculptureId) {
+    const s = sculpturesData[sculptureId];
+    const questions = this.modal.querySelectorAll('#quiz-content .quiz-question');
+    let score = 0;
+    questions.forEach((qEl, i) => {
+      const sel = qEl.querySelector('.quiz-option.selected');
+      const fb = qEl.querySelector('.quiz-feedback');
+      if (!sel) return;
+      const chosen = parseInt(sel.dataset.option, 10);
+      const correct = s.quiz[i].correct;
+      if (chosen === correct) {
+        score++;
+        sel.classList.add('correct');
+      } else {
+        sel.classList.add('incorrect');
+        qEl.querySelector(`.quiz-option[data-option="${correct}"]`)?.classList.add('correct');
+      }
+      fb.innerHTML = `<strong>Explicação:</strong> ${s.quiz[i].explanation}`;
+      fb.style.display = 'block';
+    });
 
-        zoomIn?.addEventListener('click', () => this.zoom(1.2));
-        zoomOut?.addEventListener('click', () => this.zoom(0.8));
-        zoomReset?.addEventListener('click', () => this.resetZoom());
-    }
+    const total = questions.length;
+    const perc = Math.round((score/total)*100);
+    const resEl = this.modal.querySelector('#quiz-content .quiz-results');
+    resEl.innerHTML = `<h4>Resultado</h4><p>Você acertou <strong>${score} de ${total}</strong> (${perc}%)</p>`;
+    resEl.style.display = 'block';
+    this.modal.querySelector('#quiz-content .quiz-submit').disabled = true;
+  }
 
-    showSculptureModal(sculptureId) {
-        const sculpture = sculpturesData[sculptureId];
-        if (!sculpture || !sculpture.images || sculpture.images.length === 0) {
-            console.error(`Dados da escultura '${sculptureId}' estão incompletos ou não foram encontrados.`);
-            return;
-        }
-        
-        this.currentSculpture = sculptureId;
-        
-        document.getElementById('modal-title').textContent = sculpture.title;
-        
-        const mainImage = document.getElementById('modal-image');
-        const thumbnailsContainer = document.getElementById('thumbnails-container');
-        
-        mainImage.src = sculpture.images[0];
-        mainImage.alt = sculpture.title;
-        
-        thumbnailsContainer.innerHTML = '';
-        if (sculpture.images.length > 1) {
-            sculpture.images.forEach((imgSrc, index) => {
-                const thumb = document.createElement('img');
-                thumb.src = imgSrc;
-                thumb.alt = `${sculpture.title} - view ${index + 1}`;
-                thumb.className = 'thumbnail-img';
-                if (index === 0) thumb.classList.add('active');
-                
-                thumb.addEventListener('click', (e) => {
-                    document.getElementById('modal-image').src = e.target.src;
-                    document.querySelectorAll('.thumbnail-img').forEach(t => t.classList.remove('active'));
-                    e.target.classList.add('active');
-                });
+  zoom(f) {
+    this.zoomLevel = Math.min(3, Math.max(0.5, this.zoomLevel * f));
+    document.getElementById('modal-image').style.transform = `scale(${this.zoomLevel})`;
+  }
 
-                thumbnailsContainer.appendChild(thumb);
-            });
-        }
-
-        this.loadTabContent(sculptureId);
-        this.modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-        this.showTab('historia');
-        this.resetZoom();
-    }
-
-    showTab(tabId) {
-        const tabsToHideImage = ['quiz', 'analise'];
-        
-        if (tabsToHideImage.includes(tabId)) {
-            this.modalBody.classList.add('hide-image-view');
-        } else {
-            this.modalBody.classList.remove('hide-image-view');
-        }
-
-        document.querySelectorAll('.modal-tabs .tab-button').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-
-        document.querySelector(`.tab-button[data-tab="${tabId}"]`)?.classList.add('active');
-        document.getElementById(`tab-${tabId}`)?.classList.add('active');
-
-        if (tabId === 'analise') {
-            this.fetchComments(this.currentSculpture);
-        }
-    }
-
-    async fetchComments(sculptureId) {
-        const commentsContainer = document.getElementById('comments-list');
-        commentsContainer.innerHTML = '<p>Carregando comentários...</p>';
-        try {
-            const response = await fetch(`${SCRIPT_URL}?sculptureId=${sculptureId}`);
-            if (!response.ok) throw new Error(`Erro na requisição: ${response.statusText}`);
-            const comments = await response.json();
-            
-            if (comments.length === 0) {
-                commentsContainer.innerHTML = '<p>Seja o primeiro a deixar uma análise sobre esta obra!</p>';
-                return;
-            }
-            
-            let commentsHTML = '';
-            comments.sort((a, b) => new Date(b.Timestamp) - new Date(a.Timestamp)).forEach(comment => {
-                commentsHTML += `
-                    <div class="comment-item">
-                        <strong class="comment-author">${this.sanitizeHTML(comment.name)}</strong>
-                        <p class="comment-text">${this.sanitizeHTML(comment.comment)}</p>
-                        <span class="comment-date">${new Date(comment.Timestamp).toLocaleDateString('pt-BR')}</span>
-                    </div>
-                `;
-            });
-            commentsContainer.innerHTML = commentsHTML;
-        } catch (error) {
-            commentsContainer.innerHTML = '<p>Não foi possível carregar os comentários. Verifique a configuração da API e as permissões da planilha.</p>';
-            console.error('Erro ao buscar comentários:', error);
-        }
-    }
-
-    async handleCommentSubmit(form) {
-        const nameInput = form.querySelector('input[name="name"]');
-        const commentInput = form.querySelector('textarea[name="comment"]');
-        const submitButton = form.querySelector('button');
-
-        if (!nameInput.value.trim() || !commentInput.value.trim()) {
-            alert('Por favor, preencha seu nome e comentário.');
-            return;
-        }
-        
-        const originalButtonText = submitButton.textContent;
-        submitButton.disabled = true;
-        submitButton.textContent = 'Enviando...';
-
-        const data = {
-            sculptureId: this.currentSculpture,
-            name: nameInput.value,
-            comment: commentInput.value
-        };
-
-        try {
-            await fetch(SCRIPT_URL, {
-                method: 'POST',
-                // Usar o modo 'cors' é o ideal se o Apps Script estiver configurado corretamente
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            });
-            
-            form.reset();
-            // Atualiza a lista imediatamente após o sucesso
-            this.fetchComments(this.currentSculpture);
-
-        } catch (error) {
-            alert('Ocorreu um erro ao enviar seu comentário. Tente novamente.');
-            console.error('Erro ao enviar comentário:', error);
-        } finally {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-        }
-    }
-    
-    sanitizeHTML(str) {
-        const temp = document.createElement('div');
-        temp.textContent = str;
-        return temp.innerHTML;
-    }
-    
-    loadTabContent(sculptureId) {
-        const sculpture = sculpturesData[sculptureId];
-        
-        // Renderiza as abas existentes
-        document.getElementById('historia-content').innerHTML = `<h3>História da Obra</h3><p>${sculpture.historia || 'Informação não disponível.'}</p>`;
-        document.getElementById('comunica-content').innerHTML = `<h3>O que Comunica</h3><p>${sculpture.comunica || 'Informação não disponível.'}</p>`;
-        document.getElementById('reflexao-content').innerHTML = `<h3>Reflexão</h3><p>${sculpture.reflexao || 'Informação não disponível.'}</p>`;
-        
-        // **LÓGICA PARA RENDERIZAR A NOVA ABA**
-        const specsContent = document.getElementById('especificacoes-content');
-        if (sculpture.especificacoes) {
-            let specsHTML = '<h3>Ficha Técnica</h3><ul class="spec-list">';
-            for (const [label, value] of Object.entries(sculpture.especificacoes)) {
-                specsHTML += `
-                    <li class="spec-item">
-                        <span class="spec-label">${label}:</span>
-                        <span class="spec-value">${value}</span>
-                    </li>
-                `;
-            }
-            specsHTML += '</ul>';
-            specsContent.innerHTML = specsHTML;
-        } else {
-            specsContent.innerHTML = '<p>Especificações técnicas não disponíveis para esta obra.</p>';
-        }
-        this.loadQuiz(sculptureId);
-    }
-    
-    loadQuiz(sculptureId) {
-        const sculpture = sculpturesData[sculptureId];
-        const quizContent = document.getElementById('quiz-content');
-
-        let quizHTML = '<h3>Quiz Interativo</h3>';
-        
-        (sculpture.quiz || []).forEach((question, index) => {
-            quizHTML += `
-                <div class="quiz-question" data-question="${index}">
-                    <h4>Pergunta ${index + 1}: ${question.question}</h4>
-                    <div class="quiz-options">
-                        ${(question.options || []).map((option, optionIndex) => `
-                            <div class="quiz-option" data-option="${optionIndex}">
-                                ${option}
-                            </div>
-                        `).join('')}
-                    </div>
-                    <div class="quiz-feedback" style="display: none;"></div>
-                </div>
-            `;
-        });
-
-        quizHTML += `<button class="quiz-submit">Verificar Respostas</button><div class="quiz-results" style="display: none; margin-top: 20px;"></div>`;
-        quizContent.innerHTML = quizHTML;
-
-        quizContent.querySelectorAll('.quiz-option').forEach(option => {
-            option.addEventListener('click', (e) => {
-                const question = e.target.closest('.quiz-question');
-                question.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
-                e.target.classList.add('selected');
-            });
-        });
-
-        quizContent.querySelector('.quiz-submit').addEventListener('click', () => this.submitQuiz(sculptureId));
-    }
-    
-    submitQuiz(sculptureId) {
-        const sculpture = sculpturesData[sculptureId];
-        const questions = this.modal.querySelectorAll('#quiz-content .quiz-question');
-        let score = 0;
-        let totalQuestions = questions.length;
-
-        questions.forEach((questionEl, index) => {
-            const selectedOption = questionEl.querySelector('.quiz-option.selected');
-            const feedback = questionEl.querySelector('.quiz-feedback');
-            const questionData = sculpture.quiz[index];
-
-            if (selectedOption) {
-                const selectedIndex = parseInt(selectedOption.dataset.option);
-                const isCorrect = selectedIndex === questionData.correct;
-
-                if (isCorrect) {
-                    score++;
-                    selectedOption.classList.add('correct');
-                } else {
-                    selectedOption.classList.add('incorrect');
-                    const correctOption = questionEl.querySelector(`[data-option="${questionData.correct}"]`);
-                    correctOption?.classList.add('correct');
-                }
-                feedback.innerHTML = `<strong>Explicação:</strong> ${questionData.explanation}`;
-                feedback.style.display = 'block';
-            }
-        });
-
-        const resultsEl = this.modal.querySelector('#quiz-content .quiz-results');
-        const percentage = Math.round((score / totalQuestions) * 100);
-        resultsEl.innerHTML = `
-            <h4>Resultado do Quiz</h4>
-            <p>Você acertou <strong>${score} de ${totalQuestions}</strong> perguntas (${percentage}%)</p>
-        `;
-        resultsEl.style.display = 'block';
-
-        const submitButton = this.modal.querySelector('#quiz-content .quiz-submit');
-        submitButton.disabled = true;
-        submitButton.textContent = 'Quiz Concluído';
-    }
-
-    zoom(factor) {
-        this.zoomLevel *= factor;
-        this.zoomLevel = Math.max(0.5, Math.min(3, this.zoomLevel));
-        document.getElementById('modal-image').style.transform = `scale(${this.zoomLevel})`;
-    }
-
-    resetZoom() {
-        this.zoomLevel = 1;
-        document.getElementById('modal-image').style.transform = 'scale(1)';
-    }
-
-    enableImageDrag(image) {
-        // ... (código existente sem alterações)
-    }
+  resetZoom() {
+    this.zoomLevel = 1;
+    document.getElementById('modal-image').style.transform = 'scale(1)';
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    window.gallery = new Gallery();
+  window.gallery = new Gallery();
 });
