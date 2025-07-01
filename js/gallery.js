@@ -1,5 +1,5 @@
 // Substitua pela URL que você copiou do Google Apps Script
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx7ol9BFuxzsUn4Yak2NIaJ62mkHVw4wexzgD46FBVEsbi6eFe19PFTJ-mqZ6o71zvo/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwAXk4b3Vlc6O3QoU6NSAutxG81Hz-RoxWAE2Heo6E_hfKsWFlwXjKK23qhRYWVq1I6/exec";
 
 const sculpturesData = {
     'idade-bronze': {
