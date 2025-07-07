@@ -1,4 +1,3 @@
-// Substitua pela URL que você copiou do Google Apps Script
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzon8G9Q-0PgOw-_bJ-ZSESRoTWHeumsqxnXrvHfZeRyApdLDIXT8NLnVtO9UYY0wJE/exec";
 
 const sculpturesData = {
@@ -333,7 +332,6 @@ class Gallery {
     const originalText = btn.textContent;
     btn.textContent = 'Enviando...';
 
-    // ==> Envio como application/x-www-form-urlencoded <==
     const params = new URLSearchParams();
     params.append('sculptureId', this.currentSculpture);
     params.append('name', nameInput.value.trim());
@@ -372,7 +370,6 @@ class Gallery {
     document.getElementById('comunica-content').innerHTML = `<h3>O que Comunica</h3><p>${s.comunica}</p>`;
     document.getElementById('reflexao-content').innerHTML = `<h3>Reflexão</h3><p>${s.reflexao}</p>`;
 
-    // especificações
     const specs = document.getElementById('especificacoes-content');
     if (s.especificacoes) {
       specs.innerHTML = '<h3>Ficha Técnica</h3><ul class="spec-list">' +
