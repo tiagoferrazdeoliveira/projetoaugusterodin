@@ -1,4 +1,3 @@
-// Sistema de Quiz Interativo
 class QuizSystem {
     constructor() {
         this.quizzes = {};
@@ -12,17 +11,12 @@ class QuizSystem {
     }
 
     loadQuizData() {
-        // Os dados dos quizzes já estão em sculpturesData
-        // Este método pode ser expandido para carregar dados externos se necessário
         console.log('Sistema de Quiz inicializado');
     }
 
     bindEvents() {
-        // Eventos já são tratados na classe Gallery
-        // Este método pode ser usado para funcionalidades adicionais do quiz
     }
 
-    // Método para criar quiz personalizado
     createCustomQuiz(questions, containerId) {
         const container = document.getElementById(containerId);
         if (!container) return;
@@ -54,7 +48,7 @@ class QuizSystem {
 
         container.innerHTML = quizHTML;
 
-        // Bind eventos
+
         container.querySelectorAll('.quiz-option').forEach(option => {
             option.addEventListener('click', (e) => {
                 const question = e.target.closest('.quiz-question');
@@ -78,8 +72,6 @@ class QuizSystem {
 
             if (selectedOption) {
                 const selectedIndex = parseInt(selectedOption.dataset.option);
-                // Assumindo que a resposta correta é sempre a primeira opção para quizzes customizados
-                // Isso pode ser modificado conforme necessário
                 const isCorrect = selectedIndex === 0;
 
                 if (isCorrect) {
@@ -94,7 +86,6 @@ class QuizSystem {
             }
         });
 
-        // Mostrar resultados
         const resultsEl = container.querySelector('.quiz-results');
         const percentage = Math.round((score / totalQuestions) * 100);
         resultsEl.innerHTML = `
@@ -103,12 +94,10 @@ class QuizSystem {
         `;
         resultsEl.style.display = 'block';
 
-        // Desabilitar botão
         container.querySelector('.quiz-submit').disabled = true;
         container.querySelector('.quiz-submit').textContent = 'Quiz Concluído';
     }
 
-    // Método para gerar estatísticas de quiz
     getQuizStatistics() {
         const progress = window.progressTracker?.getProgress();
         if (!progress) return null;
@@ -125,7 +114,7 @@ class QuizSystem {
 
         if (progress.quizzesCompleted.length > 0) {
             const scores = progress.quizzesCompleted.map(q => q.score);
-            const totalPossible = progress.quizzesCompleted.length * 3; // 3 perguntas por quiz
+            const totalPossible = progress.quizzesCompleted.length * 3;
             
             stats.totalQuestions = totalPossible;
             stats.correctAnswers = scores.reduce((sum, score) => sum + score, 0);
@@ -137,7 +126,6 @@ class QuizSystem {
         return stats;
     }
 
-    // Método para exibir estatísticas
     displayStatistics(containerId) {
         const container = document.getElementById(containerId);
         if (!container) return;
@@ -179,7 +167,6 @@ class QuizSystem {
         `;
     }
 
-    // Método para resetar progresso de quiz
     resetQuizProgress() {
         if (confirm('Tem certeza que deseja resetar todo o progresso dos quizzes?')) {
             window.progressTracker?.resetProgress();
@@ -187,7 +174,6 @@ class QuizSystem {
         }
     }
 
-    // Método para exportar resultados
     exportQuizResults() {
         const stats = this.getQuizStatistics();
         const progress = window.progressTracker?.getProgress();
@@ -221,7 +207,6 @@ class QuizSystem {
     }
 }
 
-// Funcionalidades de gamificação
 class Gamification {
     constructor() {
         this.achievements = {
@@ -278,30 +263,25 @@ class Gamification {
         const progress = window.progressTracker?.getProgress();
         if (!progress) return;
 
-        // Primeiro quiz
         if (progress.quizzesCompleted.length >= 1 && !this.achievements['primeiro-quiz'].unlocked) {
             this.unlockAchievement('primeiro-quiz');
         }
 
-        // Metade dos quizzes
         const totalQuizzes = Object.keys(sculpturesData).length;
         if (progress.quizzesCompleted.length >= Math.ceil(totalQuizzes / 2) && !this.achievements['metade-quizzes'].unlocked) {
             this.unlockAchievement('metade-quizzes');
         }
 
-        // Todos os quizzes
         if (progress.quizzesCompleted.length >= totalQuizzes && !this.achievements['todos-quizzes'].unlocked) {
             this.unlockAchievement('todos-quizzes');
         }
 
-        // Pontuação perfeita
         const perfectScores = progress.quizzesCompleted.filter(q => q.score === 3);
         if (perfectScores.length >= 1 && !this.achievements['pontuacao-perfeita'].unlocked) {
             this.unlockAchievement('pontuacao-perfeita');
         }
 
-        // Explorador
-        const totalSections = 6; // inicio, historia, influencia, linha-tempo, galeria, glossario
+        const totalSections = 6;
         if (progress.sectionsVisited.length >= totalSections && !this.achievements['explorador'].unlocked) {
             this.unlockAchievement('explorador');
         }
@@ -314,7 +294,6 @@ class Gamification {
         achievement.unlocked = true;
         this.saveAchievements();
 
-        // Mostrar notificação de conquista
         this.showAchievementNotification(achievement);
     }
 
@@ -382,12 +361,10 @@ class Gamification {
     }
 }
 
-// Inicializar sistemas de quiz e gamificação
 document.addEventListener('DOMContentLoaded', () => {
     window.quizSystem = new QuizSystem();
     window.gamification = new Gamification();
 
-    // Adicionar estilos para conquistas
     const achievementStyles = `
         @keyframes achievementSlideIn {
             from {
@@ -526,7 +503,6 @@ document.addEventListener('DOMContentLoaded', () => {
     styleSheet.textContent = achievementStyles;
     document.head.appendChild(styleSheet);
 
-    // Verificar conquistas periodicamente
     setInterval(() => {
         window.gamification?.checkAchievements();
     }, 5000);
