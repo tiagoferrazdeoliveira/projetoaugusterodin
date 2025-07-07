@@ -1,4 +1,3 @@
-// Sistema principal de navegação e funcionalidades gerais
 class RodinApp {
     constructor() {
         this.navLinks = document.querySelectorAll('.nav-link');
@@ -12,10 +11,9 @@ class RodinApp {
         this.setupSectionObserver();
         this.initializeModals();
         this.setupTimelineToggle();
-        this.setupManualCards(); // <-- ADICIONADO!
+        this.setupManualCards();
     }
 
-    // Configura o clique nos links para rolar suavemente até a seção
     setupSmoothScrolling() {
         this.navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
@@ -41,9 +39,7 @@ class RodinApp {
         }
     }
 
-    // NOVO MÉTODO - para os cards do Manual do Livro Digital
     setupManualCards() {
-        // Seleciona todos os cards com o atributo data-target
         document.querySelectorAll('.manual-item[data-target]').forEach(card => {
             card.style.cursor = "pointer";
             card.addEventListener('click', function () {
@@ -56,7 +52,6 @@ class RodinApp {
         });
     }
 
-    // Configura o observador que atualiza o link ativo conforme a rolagem
     setupSectionObserver() {
         const options = {
             root: null,
@@ -87,7 +82,6 @@ class RodinApp {
         });
     }
 
-    // Gerencia o fechamento de todos os modais
     initializeModals() {
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
@@ -115,7 +109,6 @@ class RodinApp {
         document.body.style.overflow = 'auto';
     }
 
-    // Configura o botão de expandir/retrair da linha do tempo
     setupTimelineToggle() {
         if (window.innerWidth > 1024) {
             const timelineSection = document.querySelector('#linha-tempo .container');
@@ -149,7 +142,6 @@ class RodinApp {
     }
 }
 
-// Inicialização da aplicação
 document.addEventListener('DOMContentLoaded', () => {
     window.rodinApp = new RodinApp();
     console.log('🎨 Livro Digital de Rodin (One-Page) inicializado com sucesso!');
