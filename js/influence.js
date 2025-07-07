@@ -1,5 +1,3 @@
-// js/influence.js
-
 const influenceData = {
     'michelangelo': {
         title: 'Influência de Michelangelo: Força e o "Non Finito"',
@@ -76,7 +74,7 @@ class InfluenceSystem {
         const data = influenceData[influenceId];
         if (!data) return;
         this.modalTitle.innerHTML = data.title;
-        this.modalContent.innerHTML = data.details; // Usar innerHTML para renderizar as tags <br> e <strong>
+        this.modalContent.innerHTML = data.details;
         this.modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
