@@ -68,7 +68,7 @@ const sculpturesData = {
     'pensador': {
         title: 'O Pensador',
         year: '1880',
-        images: ['https://i.postimg.cc/S4Dxzttd/The-Thinker-1.jpg', 'https://i.postimg.cc/zztDZVR6/The-Thinker-2.jpg'],
+        images: ['https://i.postimg.cc/pr6srwNC/O-Pensador.jpg', 'https://i.postimg.cc/zztDZVR6/The-Thinker-2.jpg', 'https://i.postimg.cc/S4Dxzttd/The-Thinker-1.jpg'],
         especificacoes: {
             "Título Original": "Le Penseur", "Artista": "Auguste Rodin (1840–1917)", "Data": "Modelado em 1880, fundido em 1902", "Material": "Bronze", "Dimensões": "Aprox. 186 cm de altura (versão monumental)", "Origem": "Originalmente posicionado no topo de 'O Portão do Inferno'"
         },
@@ -163,7 +163,7 @@ const sculpturesData = {
     'beijo': {
         title: 'O Beijo',
         year: 'c. 1882',
-        images: ['https://upload.wikimedia.org/wikipedia/commons/f/f1/Auguste_Rodin%2C_The_Kiss_%28Le_Baiser%29%2C_model_1880-1887%2C_cast_c.1898-1902%2C_NGA_1008.jpg','https://upload.wikimedia.org/wikipedia/commons/4/41/Rodin_The_Kiss%28detail%29_02.jpg'],
+        images: ['https://i.postimg.cc/tJTrXXc7/O-beijo.jpg','https://i.postimg.cc/4dXLSvb6/O-beijo-2.jpg'],
         especificacoes: {
             "Título Original": "Le Baiser",
             "Artista": "Auguste Rodin (1840–1917)",
@@ -183,7 +183,7 @@ const sculpturesData = {
     'sao-joao': {
         title: 'São João Batista',
         year: '1878',
-        images: ['https://upload.wikimedia.org/wikipedia/commons/b/b9/Rodin_-Saint_John_the_Baptist_Preaching-_LACMA.jpg','https://upload.wikimedia.org/wikipedia/commons/5/53/John_the_Baptist_by_Auguste_Rodin%2C_V%26A_London_02.jpg'],
+        images: ['https://upload.wikimedia.org/wikipedia/commons/5/53/John_the_Baptist_by_Auguste_Rodin%2C_V%26A_London_02.jpg'],
         especificacoes: {
             "Título Original": "Saint Jean Baptiste prêchant",
             "Artista": "Auguste Rodin (1840–1917)",
