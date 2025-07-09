@@ -20,7 +20,7 @@ const sculpturesData = {
     'portao-inferno': {
         title: 'Portão do Inferno',
         year: '1880 - 1917',
-        images: ['https://i.postimg.cc/R9zGxkhG/Gate-of-hell.jpg'],
+        images: [ 'https://i.postimg.cc/SK6C3wD5/Portao-1.jpg', 'https://i.postimg.cc/FRh34D6K/Portao-4.jpg', 'https://i.postimg.cc/QCt7BVhG/Portao-2.jpg', 'https://i.postimg.cc/3R9pJ2MF/Portao-3.jpg' ],
         especificacoes: {
             "Título Original": "La Porte de l'Enfer", "Artista": "Auguste Rodin (1840–1917)", "Data": "Concebido em 1880, nunca completamente finalizado", "Material": "Bronze (fundições póstumas)", "Dimensões": "Aprox. 6m x 4m x 1m", "Inspiração": "A Divina Comédia, de Dante Alighieri"
         },
